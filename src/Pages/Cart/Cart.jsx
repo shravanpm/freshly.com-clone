@@ -5,40 +5,111 @@ import {
   Button,
   Heading,
   Text,
-  useDisclosure,
   Stack,
   Checkbox,
   RadioGroup,
   Radio,
   SimpleGrid,
 } from "@chakra-ui/react";
+
 import Card from "../../Components/Cart/Card";
 import axios from "axios";
+import { useSearchParams } from "react-router-dom";
+import { getData } from "../../Redux/AppReducer/action";
+import { useDispatch, useSelector } from "react-redux";
 
 function Cart() {
   const [sidebarVisible, toggleSidebar] = useState(false);
-  const [data, setData] = useState([]);
+  let [searchParams, setSearchParams] = useSearchParams();
 
+  const data = useSelector((state) => state.appReducer.data);
+
+  const dispatch = useDispatch();
+  const urlcategory = searchParams.get("category");
+
+  const [category, setCategory] = useState(urlcategory || "");
+  const urlSortBy = searchParams.get("_sort");
+
+  const [sortBy, setSortBy] = useState(urlSortBy || "");
+
+  const [diet, setDeit] = useState([]);
+  const foods = data.filter((food) => {
+    if (diet.length === 0) {
+      return food;
+    } else {
+      let foodData = [];
+      for (let i = 0; i < diet.length; i++) {
+        if (food[diet[i]]) {
+          return food;
+        }
+      }
+    }
+  });
+  // console.log(foods);
+  //Modal
+
+  const handleModal = (v) => {
+    // BasicUsage(v);
+  };
   const handleSidebarToggle = () => {
     toggleSidebar(!sidebarVisible);
   };
 
+  const handleCheckbox = (e) => {
+    const option = e.target.value;
+    let newDiet = [...diet];
+    if (diet.includes(option)) {
+      console.log("hello");
+      newDiet.splice(newDiet.indexOf(option), 1);
+    } else {
+      newDiet.push(option);
+    }
+    setDeit(newDiet);
+    // console.log(diet);
+  };
+
   useEffect(() => {
-    return axios({
-      url: "http://localhost:8080/foods",
-      method: "GET",
-    }).then((res) => {
-      setData(res.data);
-    });
-  }, []);
+    let Category = searchParams.get("category") || category;
+    if (!category) {
+      Category = "";
+    }
+
+    let SortBy = searchParams.get("sortBy") || sortBy;
+
+    let getParams;
+    if (Category && SortBy) {
+      getParams = {
+        category: category,
+        _sort: sortBy,
+        _order: "desc",
+      };
+    } else if (Category) {
+      getParams = {
+        category: category,
+      };
+    } else if (SortBy) {
+      getParams = {
+        _sort: sortBy,
+        _order: "desc",
+      };
+    } else {
+      setSearchParams("");
+      dispatch(getData());
+    }
+
+    setSearchParams(getParams);
+    dispatch(getData(getParams));
+  }, [sortBy, category]);
+
   return (
     <Flex backgroundColor={"rgb(254,253,246)"}>
       {/* Left container */}
       <Box
-        w="70%"
+        w="75%"
         // border={"1px solid red"}
         h="800px"
         p="10px"
+        mr="-10px"
       >
         <Flex
           justifyContent={"space-between"}
@@ -89,10 +160,18 @@ function Cart() {
                     Diet :
                   </Heading>
                   <Stack>
-                    <Checkbox>Gluten Free</Checkbox>
-                    <Checkbox>Carb Conscious</Checkbox>
-                    <Checkbox>Plant-Based</Checkbox>
-                    <Checkbox>Dairy-Free</Checkbox>
+                    <Checkbox value="GlutenFree" onChange={handleCheckbox}>
+                      Gluten Free
+                    </Checkbox>
+                    <Checkbox value="CarbCautious" onChange={handleCheckbox}>
+                      Carb Conscious
+                    </Checkbox>
+                    <Checkbox value="PlantBased" onChange={handleCheckbox}>
+                      Plant-Based
+                    </Checkbox>
+                    <Checkbox value="DiaryFree" onChange={handleCheckbox}>
+                      Dairy-Free
+                    </Checkbox>
                   </Stack>
                 </Box>
 
@@ -100,13 +179,15 @@ function Cart() {
                   <Heading as="h6" size="sm" pt="5px" textAlign={"left"}>
                     Categories :
                   </Heading>
-                  <RadioGroup onChange={() => {}} value={""}>
+                  <RadioGroup onChange={setCategory} value={category}>
                     <Stack textAlign={"left"}>
                       <Radio value="">Full Menu</Radio>
-                      <Radio value="2">Signature Collection</Radio>
-                      <Radio value="3">Purely Plant</Radio>
-                      <Radio value="2">Freshly Fit</Radio>
-                      <Radio value="3">Proteins & Sides</Radio>
+                      <Radio value="SignatureCollection">
+                        Signature Collection
+                      </Radio>
+                      <Radio value="PurePlant">Purely Plant</Radio>
+                      <Radio value="FreshlyFitted">Freshly Fit</Radio>
+                      <Radio value="ProteinSides">Proteins & Sides</Radio>
                     </Stack>
                   </RadioGroup>
                 </Box>
@@ -116,17 +197,17 @@ function Cart() {
                   </Heading>
                 </Box>
                 <Box>
-                  <Heading as="h6" size="sm" pt="5px" textAlign={"left"}>
-                    Categories :
+                  <Heading as="h6" size="xs" pt="5px" textAlign={"left"}>
+                    Nutritional Macros :
                   </Heading>
-                  <RadioGroup onChange={() => {}} value={""}>
+                  <RadioGroup onChange={setSortBy} value={sortBy}>
                     <Stack textAlign={"left"}>
                       <Radio value="">Default</Radio>
-                      <Radio value="2">Calories</Radio>
-                      <Radio value="3">Carbs</Radio>
-                      <Radio value="2">Protein</Radio>
-                      <Radio value="3">Total Fat</Radio>
-                      <Radio value="3">Sodium</Radio>
+                      <Radio value="calories">Calories</Radio>
+                      <Radio value="carbs">Carbs</Radio>
+                      <Radio value="protein">Protein</Radio>
+                      <Radio value="totalFat">Total Fat</Radio>
+                      <Radio value="sodium">Sodium</Radio>
                     </Stack>
                   </RadioGroup>
                 </Box>
@@ -139,11 +220,11 @@ function Cart() {
             h="80vh"
             border="1px solid green"
             overflow={"scroll"}
-            p="10px"
+            p="20px"
           >
-            <SimpleGrid columns={[3, 4]} spacing={10}>
-              {data.length != 0
-                ? data.map((food) => <Card data={food} key={food.id} />)
+            <SimpleGrid minChildWidth="170px" spacing={30}>
+              {foods.length !== 0
+                ? foods.map((food) => <Card data={food} key={food.id} />)
                 : null}
             </SimpleGrid>
           </Box>
@@ -152,7 +233,7 @@ function Cart() {
       {/* Right Side Cart Box*/}
       <Box
         backgroundColor="rgb(254,254,255)"
-        w="30%"
+        w="25%"
         h="100vh"
         border="1px solid blue"
       >

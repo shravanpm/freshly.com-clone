@@ -1,14 +1,12 @@
 import "./App.css";
-
-import Plans from "./Pages/Plans/plans";
+import AllRoutes from "./Components/LandingPage/components/AllRoutes"
 
 function App() {
-  return <div className="App">
-   <Plans bgColor="#fffdf7" />
-
-
+	return <div className="App">
+    <AllRoutes />
   </div>;
-}
 
+
+}
 
 export default App;
