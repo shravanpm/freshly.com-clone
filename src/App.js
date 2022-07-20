@@ -1,7 +1,7 @@
 import "./App.css";
 
 function App() {
-  return <div className="App">Freshly Clone</div>;
+  return <div className="App"></div>;
 }
 
 export default App;
