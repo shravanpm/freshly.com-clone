@@ -1011,5 +1011,73 @@
       "img_2": "https://res.cloudinary.com/freshly/image/upload/c_fill,dpr_2,f_auto,h_383,w_580/v1637012801/production-meal-image-cc993f69-51fe-470b-83bf-bb8e8baa4b61.jpg",
       "id": 30
     }
+  ],
+  "plans":[
+    {
+      "title":"4",
+      "pricePerMeal": "$11.79",
+      "totalPrice":" ",
+      "discount": "$47.16",
+      "id": 1
+
+    },
+    {
+      "title":"5",
+      "pricePerMeal": "$11.79",
+      "totalPrice":" ",
+      "discount": "$58.95",
+      "id": 2
+
+    },
+    
+    {
+      "title":"6",
+      "pricePerMeal": "$9.99",
+      "totalPrice": " $70.74",
+      "discount": " $59.94",
+      "id": 3
+    },
+    {
+      "title":"7",
+      "pricePerMeal": "$9.99",
+      "totalPrice": "$82.53",
+      "discount": "  $69.93",
+      "id": 4
+    },
+    {
+      "title":"8",
+      "pricePerMeal": "$9.49",
+      "totalPrice": "$94.32",
+      "discount": "$75.92",
+      "id": 5
+    },
+    {
+      "title":"9",
+      "pricePerMeal": "$9.49",
+      "totalPrice": "$106.11",
+      "discount": "$85.41",
+      "id": 6
+    },
+    {
+      "title":"10",
+      "pricePerMeal": "$9.29",
+      "totalPrice": "$117.90",
+      "discount":"$92.90",
+      "id": 7
+    },
+    {
+      "title":"11",
+      "pricePerMeal": "$9.29",
+      "totalPrice": "$129.69",
+      "discount":"$102.19",
+      "id": 8
+    },
+    {
+      "title":"12",
+      "pricePerMeal": "$8.99",
+      "totalPrice": "$141.48",
+      "discount":"$107.88",
+      "id": 9
+    }
   ]
 }
