@@ -1,0 +1,69 @@
+.sl1flex{
+    display: flex;
+    width: 90%;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+}
+.mainslider1{
+    text-align: center;
+    margin-top:30px;
+}
+.subsl1flex{
+    width: 95%;
+    height: fit-content;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+.sldiv{
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    gap: 8px;
+    width: 400px;
+    border-radius: 15px;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+.sldiv img{
+    height: 30px;
+}
+/* .sldiv:hover{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    cursor: pointer;
+} */
+
+
+
+.showbtn{
+    height: 200px;
+    color: blue;
+    display: block;
+    padding: 15px;
+    cursor: pointer;
+}
+.sl1t1{
+    font-size: 17px;
+    font-weight: 600;
+}
+.sl1t2{
+    font-size: small;
+}
+.sl1t3{
+    font-size: small;
+    font-weight: 600;
+}
+
+@media all and (min-width:401px) and (max-width:720px){
+
+    .subsl1flex{
+        display: flex;
+        flex-direction: column;
+    }
+
+
+}
