@@ -10,6 +10,7 @@ import {
   SimpleGrid,
   Spacer,
   Stack,
+  Tag,
   Text,
 } from "@chakra-ui/react";
 import { useDispatch } from "react-redux";
@@ -32,7 +33,13 @@ export const CartModalTitle = ({ data }) => {
         <Flex justifyContent={"space-between"}>
           <Flex mr="100px">
             {data.highlight.split(",").map((item, index) => (
-              <Button size="xs" mr="5px" key={index}>{`${item}`}</Button>
+              <Tag
+                size="xs"
+                p="0px 10px"
+                mr="5px"
+                key={index}
+                fontSize="12px"
+              >{`${item}`}</Tag>
             ))}
           </Flex>
           <Spacer />
