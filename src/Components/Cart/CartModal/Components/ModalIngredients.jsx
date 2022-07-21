@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import {
   Box,
@@ -11,11 +11,18 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
+import {
+  Accordion,
+  AccordionItem,
+  AccordionButton,
+  AccordionPanel,
+  AccordionIcon,
+} from "@chakra-ui/react";
 
 function CartModalIngredient({ data }) {
   return (
     <>
-      <Box p="10px" backgroundColor={"white"} mt="10px">
+      <Box p="10px" backgroundColor={"white"} mt="10px" h="fit-content">
         <Text>
           <b>Ingredients</b>
         </Text>
@@ -42,9 +49,44 @@ function CartModalIngredient({ data }) {
             </Stack>
           ))}
         </SimpleGrid>
-        <Center color="blue" cursor="pointer" h="50px">
-          <Text>Show Complete Ingredients</Text>
-        </Center>
+        <Box cursor="pointer" h="fit-content">
+          <Accordion>
+            <AccordionItem h="fit-content">
+              <AccordionButton>
+                <Box flex="1" textAlign="left">
+                  <Text color="blue">Show Complete Ingredients</Text>
+                </Box>
+                <AccordionIcon />
+              </AccordionButton>
+
+              <AccordionPanel pb={4}>
+                <Box>
+                  <Text fontSize={"12px"} letterSpacing="3" fontWeight="500">
+                    Chicken Breast, Green Beans, Macaroni (Water, Brown Rice
+                    Flour, Potato Starch, Tapioca Starch, Whole Egg, Egg White,
+                    Xanthan Gum, Vinegar), Water, Cheddar Cheese (Cheddar Cheese
+                    (Cultured Pasteurized Milk, Salt, Enzymes, Annatto), Potato
+                    And Corn Starches (Anti-Caking Agents), Natamycin (Natural
+                    Mold Inhibitor)), Half & Half (Milk, Cream), Almonds, Pepper
+                    Jack Cheese (Monterey Jack Cheese With Jalapeno Peppers
+                    [Cultured Pasteurized Milk, Jalapeno Peppers, Salt,
+                    Enzymes], Potato and Corn Starches (Anti-Caking Agents),
+                    Natamycin (Natural Mold Inhibitor)), Vinegar, Onion, Garlic,
+                    Butternut Squash, Expeller Pressed Canola Oil, Sea Salt,
+                    Rice Flour, Paprika, Cassava Flour, Sunflower Powder
+                    Lecithin, Spices, Rosemary Extract (Salt, Natural Extract),
+                    Baking Soda, Xanthan Gum. Contains: Egg, Milk, Tree Nuts
+                    (Almonds). Manufactured in a facility that uses egg, tree
+                    nuts, milk, fish, shellfish, and soy.
+                  </Text>
+                </Box>
+              </AccordionPanel>
+            </AccordionItem>
+          </Accordion>
+          {/* <Accordion>
+          
+          </Accordion> */}
+        </Box>
       </Box>
     </>
   );

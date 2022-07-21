@@ -32,7 +32,9 @@ export const CartModalDesc = ({ data }) => {
                 <Text
                   noOfLines={[1, 3, 5]}
                   color="rgb(48,48,54)"
-                  fontSize="14px"
+                  fontSize={"13px"}
+                  letterSpacing="3"
+                  fontWeight="500"
                 >
                   {d}
                 </Text>

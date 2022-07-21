@@ -11,13 +11,20 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
+import { useDispatch } from "react-redux";
+
 import { CartModalTitle } from "./Components/ModalTitle";
 import { CartModalDesc } from "./Components/ModalDesc";
 
 import CartModalIngredient from "./Components/ModalIngredients";
 import ModalNutrition from "./Components/ModalNutrition";
+import { addToCart } from "../../../Redux/AppReducer/action";
 
 export const CartModal = ({ data }) => {
+  const dispatch = useDispatch();
+  const handleAdd = (payload) => {
+    dispatch(addToCart(payload));
+  };
   return (
     <>
       <Box
@@ -55,12 +62,16 @@ export const CartModal = ({ data }) => {
           </Box>
 
           <Box w="52%" ml="1px" mt="15px">
-            <CartModalDesc data={data} />
+            <Box>
+              <CartModalDesc data={data} />
+            </Box>
             {/* Ingredients Starting */}
-            <CartModalIngredient data={data} />
+            <Box>
+              <CartModalIngredient data={data} mt="10px" />
+            </Box>
             {/* Ingredients ends */}
             {/* nutrition */}
-            <ModalNutrition data={data} />
+            <ModalNutrition data={data} mt="10px" />
             {/* Nutrition Ends */}
           </Box>
         </Flex>

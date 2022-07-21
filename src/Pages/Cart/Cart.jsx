@@ -231,7 +231,8 @@ function Cart() {
           )}
         </Flex>
         <Stack mt="30px">
-          <CartBox cartTotal={cartTotal} />
+          {cartData.length == 0 && <Box mt="180px">Some Random Text</Box>}
+          {<CartBox cartTotal={cartTotal} />}
         </Stack>
         {/* Bottom right cart button section */}
         <Box h="25vh">

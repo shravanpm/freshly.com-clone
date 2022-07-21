@@ -4,7 +4,7 @@ import axios from "axios";
 export const getData = (params) => (dispatch) => {
   dispatch({ type: Types.GET_DATA_REQ });
   axios({
-    url: "http://localhost:8080/foods",
+    url: "https://freshly-masai.herokuapp.com/foods",
     method: "GET",
     params: params,
   })

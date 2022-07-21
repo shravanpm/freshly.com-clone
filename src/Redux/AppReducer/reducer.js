@@ -1,6 +1,6 @@
 import * as types from "./actionTypes";
-
-const initialState = {
+import { loadData, saveData } from "../../utils/localStorage";
+const initialState = loadData("freshlyAppState") || {
   data: [],
   isLoading: false,
   cart: [],
@@ -11,6 +11,11 @@ export const reducer = (state = initialState, action) => {
   const { type, payload } = action;
   switch (type) {
     case types.GET_DATA_REQ: {
+      saveData("freshlyAppState", {
+        ...state,
+        isLoading: true,
+        isLoading: false,
+      });
       return {
         ...state,
         isLoading: true,
@@ -19,6 +24,12 @@ export const reducer = (state = initialState, action) => {
     }
 
     case types.GET_DATA_SUCCESS: {
+      saveData("freshlyAppState", {
+        ...state,
+        isLoading: false,
+        data: payload,
+        isError: false,
+      });
       return {
         ...state,
         isLoading: false,
@@ -28,6 +39,11 @@ export const reducer = (state = initialState, action) => {
     }
 
     case types.GET_DATA_FAILURE: {
+      saveData("freshlyAppState", {
+        ...state,
+        isLoading: false,
+        isError: false,
+      });
       return {
         ...state,
         isLoading: false,
@@ -43,6 +59,12 @@ export const reducer = (state = initialState, action) => {
       };
     }
     case types.ADD_DATA_TO_CART_SUCCESS: {
+      saveData("freshlyAppState", {
+        ...state,
+        isLoading: false,
+        isError: false,
+        cart: [...state.cart, payload],
+      });
       return {
         ...state,
         isLoading: false,
@@ -51,6 +73,11 @@ export const reducer = (state = initialState, action) => {
       };
     }
     case types.ADD_DATA_TO_CART_FAILURE: {
+      saveData("freshlyAppState", {
+        ...state,
+        isLoading: false,
+        isError: true,
+      });
       return {
         ...state,
         isLoading: false,
@@ -69,7 +96,12 @@ export const reducer = (state = initialState, action) => {
           return meal;
         }
       });
-
+      saveData("freshlyAppState", {
+        ...state,
+        isLoading: false,
+        isError: false,
+        cart: data,
+      });
       return {
         ...state,
         isLoading: false,
@@ -79,6 +111,10 @@ export const reducer = (state = initialState, action) => {
     }
 
     case types.CLEAR_CART_DATA: {
+      saveData("freshlyAppState", {
+        ...state,
+        cart: [],
+      });
       return {
         ...state,
         cart: [],
