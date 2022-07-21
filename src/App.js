@@ -1,19 +1,12 @@
 import "./App.css";
-<<<<<<< HEAD
+import Cart from "./Pages/Cart/Cart";
 
 function App() {
-  return <div className="App"></div>;
-=======
-
-
-import AllRoutes from "./Components/LandingPage/components/AllRoutes"
-
-function App() {
-	return <div className="App">
-    <AllRoutes />
-  </div>;
-
->>>>>>> 6b93b19f9430877c66297e6265bbd60b0be48203
+  return (
+    <div className="App">
+      <Cart />
+    </div>
+  );
 }
 
 export default App;

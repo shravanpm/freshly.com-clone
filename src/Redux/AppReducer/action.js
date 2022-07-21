@@ -15,3 +15,15 @@ export const getData = (params) => (dispatch) => {
       dispatch({ type: Types.GET_DATA_FAILURE });
     });
 };
+
+export const addToCart = (payload) => (dispatch) => {
+  dispatch({ type: Types.ADD_DATA_TO_CART_SUCCESS, payload });
+};
+
+export const removeFromCart = (id) => (dispatch) => {
+  dispatch({ type: Types.DELETE_DATA_FROM_CART, payload: id });
+};
+
+export const clearCart = () => (dispatch) => {
+  dispatch({ type: Types.CLEAR_CART_DATA });
+};
