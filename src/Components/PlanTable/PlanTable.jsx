@@ -86,7 +86,7 @@ const PlanTableContainer = styled.div`
     
     align-items: center;
     margin: auto;
-    width: 100%;
+    width: 90%;
     height: 100%;
     background-color: #fffdf7;
    
@@ -96,13 +96,18 @@ const PlanTableContainer = styled.div`
     const PlanTableContainer2 = styled.div`
     
  width: 100%;
-height: 80px;
+height: 100px;
  border: 1px solid #ededed;
  border-collapse: collapse;
- padding:10%;
+ padding:5%;
+ padding-top: 20%
+ `
 
 
-    `
+
+
+
+    
 
 
 
