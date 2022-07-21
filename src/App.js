@@ -1,20 +1,11 @@
-import './App.css';
-// import { Faq } from './Components/Faq';
-// import { SignUp } from './Pages/Authentication/SignUp';
-// import { Footer } from './Components/Footer';
-// import { Login } from './Pages/Authentication/Login';
+import "./App.css";
+
 
 function App() {
-  return (
-    <div className="App">
-      {/* Freshly Clone */}
-      {/* <Login/> */}
-      {/* <Footer/> */}
-      
-      {/* <SignUp/> */}
-      {/* <Faq/> */}
-    </div>
-  );
+  return <div className="App">
+    
+  </div>;
 }
+
 
 export default App;
