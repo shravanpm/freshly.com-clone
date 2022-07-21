@@ -1,5 +1,5 @@
 import * as types from "./actionTypes";
-import { loadData, saveData } from "../../utils/localStorage";
+import { loadData, saveData } from "../../utils/localstorage";
 const initialState = loadData("freshlyAppState") || {
   data: [],
   isLoading: false,
