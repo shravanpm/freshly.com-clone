@@ -2,15 +2,11 @@ import React from "react";
 
 import {
   Box,
-  Flex,
-  Button,
   Heading,
-  Text,
   Stack,
   Checkbox,
   RadioGroup,
   Radio,
-  SimpleGrid,
 } from "@chakra-ui/react";
 
 export const Sidebar = ({
