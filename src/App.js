@@ -1,15 +1,16 @@
 import "./App.css";
+import DateSelector from "./Pages/DateSelector/DateSelector";
 
 // import AllRoutes from "./Components/LandingPage/components/AllRoutes"
-import { SignUp } from "./Pages/Authentication/SignUp";
-import {Faq} from './Components/Faq';
+
+// import { Plans } from "./Pages/Plans/plans";
 
 function App() {
 
 	return <div className="App">
     {/* <AllRoutes /> */}
-    <SignUp/>
-    <Faq/>
+    <DateSelector/>
+
   </div>;
 
 

@@ -33,7 +33,7 @@ export const Faq = () => {
           <h3>
             <AccordionButton>
               <Box flex="1" textAlign="left">
-                <Heading size={'lg'} >
+                <Heading size={'s'} fontWeight={'630'} pt={"4"} pb={"4"}>
                   How many servings are your meals?
                 </Heading>
               </Box>
@@ -65,7 +65,7 @@ export const Faq = () => {
           <h3>
             <AccordionButton>
               <Box flex="1" textAlign="left">
-                <Heading size={'lg'}>
+                <Heading size={'s'} fontWeight={'630'} pt={"4"} pb={"4"}>
                   Do you accommodate dietary preferences?
                 </Heading>
               </Box>
@@ -89,7 +89,7 @@ export const Faq = () => {
           <h3>
             <AccordionButton>
               <Box flex="1" textAlign="left">
-                <Heading size={'lg'}>How long do the meals last?</Heading>
+                <Heading size={'s'} fontWeight={'630'} pt={"4"} pb={"4"}>How long do the meals last?</Heading>
               </Box>
               <AccordionIcon />
             </AccordionButton>
@@ -113,7 +113,8 @@ export const Faq = () => {
           <h3>
             <AccordionButton>
               <Box flex="1" textAlign="left">
-                <Heading size={'lg'}>How do I heat up my meals?</Heading>
+                <Heading size={'s'} fontWeight={'630'} pt={"4"} pb={"4"}
+                >How do I heat up my meals?</Heading>
               </Box>
               <AccordionIcon />
             </AccordionButton>
@@ -137,7 +138,7 @@ export const Faq = () => {
           <h3>
             <AccordionButton>
               <Box flex="1" textAlign="left">
-                <Heading size={'lg'}>How does shipping work?</Heading>
+                <Heading size={'s'} fontWeight={'630'} pt={"4"} pb={"4"} >How does shipping work?</Heading>
               </Box>
               <AccordionIcon />
             </AccordionButton>
@@ -158,7 +159,8 @@ export const Faq = () => {
           <h3>
             <AccordionButton>
               <Box flex="1" textAlign="left">
-                <Heading size={'lg'}>How does the subscription work?</Heading>
+                <Heading size={'s'} fontWeight={'630'} pt={"4"} pb={"4"}>
+                  How does the subscription work?</Heading>
               </Box>
               <AccordionIcon />
             </AccordionButton>

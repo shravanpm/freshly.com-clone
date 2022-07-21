@@ -978,6 +978,8 @@
       "id": 30
     }
   ],
+
+  
   "plans": [
     {
       "title": "4",
@@ -1043,5 +1045,41 @@
       "discount": "$107.88",
       "id": 9
     }
+  ],
+  "dates":[
+    { "date": " Monday, Jul 25",
+  "id":1},
+  { "date": " Tuesday, Jul 26",
+  "id":2},
+  { "date": " Wednesday, Jul 27",
+  "id":3},
+  { "date": " Thursday, Jul 28",
+  "id":4},
+  { "date": " Friday, Jul 29",
+  "id":5},
+  { "date": " Saturday, Jul 30",
+  "id":6},
+  { "date": " Sunday, Jul 31",
+  "id":7},
+  { "date": " Monday, Aug 1",
+  "id":8},
+  { "date": " Tuesday, Aug 2",
+  "id":9},
+  { "date": " Wednesday, Aug 3",
+  "id":10},
+  { "date": " Thursday, Aug 4",
+  "id":11},
+  { "date": " Friday, Aug 5",
+  "id":12},
+  { "date": " Saturday, Aug 6",
+  "id":13},
+  { "date": " Sunday, Aug 7",
+  "id":14},
+  { "date": " Monday, Aug 8",
+  "id":15},
+  { "date": " Tuesday, Aug 9",
+  "id":16}
   ]
 }
+
+   
