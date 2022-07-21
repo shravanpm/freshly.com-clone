@@ -2,6 +2,7 @@ import React from 'react'
 import { Box, Button, Heading, Text } from '@chakra-ui/react'
 import PlanTable from '../../Components/PlanTable/PlanTable'
 
+
 function Plans() {
     return (
         <div margin="auto">
@@ -26,11 +27,10 @@ function Plans() {
                         Continue
                     </Button>
                 </Box>
+               
             </Box>
         </div>
     )
 }
-
-export default Plans
-
+export {Plans}
 
