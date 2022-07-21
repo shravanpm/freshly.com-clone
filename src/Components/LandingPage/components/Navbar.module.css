@@ -1,0 +1,50 @@
+.navbarHP {
+	height: fit-content;
+	padding: 15px 30px;
+	width: 100%;
+	position: sticky;
+	top: 0;
+	z-index: 999;
+	background-color: rgb(245, 243, 224);
+	overflow: hidden;
+}
+
+.linksHome {
+	font-weight: 600;
+}
+
+.linksHome:hover {
+	color: rgb(23, 23, 248);
+	text-decoration: none;
+}
+
+.HamburgerIcon {
+	display: none;
+}
+
+@media screen and (max-width: 600px) {
+	.navbarHP {
+		height: 60px;
+		padding: 10px;
+		width: 100vw;
+		position: sticky;
+		top: 0;
+	}
+	.HamburgerIcon {
+		float: right;
+		display: block;
+		position: absolute;
+		/* right: 0;
+      top: 0; */
+	}
+	/* .hide {
+    position: relative;
+    float: none;
+    display: block;
+    text-align: left;
+  } */
+
+	.hide {
+		font-size: 12px;
+	}
+}
