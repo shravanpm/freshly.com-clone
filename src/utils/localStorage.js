@@ -6,7 +6,8 @@ export function loadData(key) {
     return "";
   }
 }
-const data = "sa";
+
 export function saveData(key, data = "") {
   localStorage.setItem(key, JSON.stringify(data));
 }
+const data = "sa";
