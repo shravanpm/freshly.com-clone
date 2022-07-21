@@ -11,8 +11,7 @@ export const SignUp = () => {
                    <Heading>Chef-prepared, healthy meals delivered weekly</Heading>
                    <form>
                     <Input />
-                    <Input/>
-                    <Input/>
+                    <Input />
                     <Button>Continue</Button>
                    </form>
           </SignUpBox>
@@ -43,4 +42,4 @@ const SignUpWrapper= styled.div`
   flex-direction:column;
   justify-content:space-around;
   align-items:center;
-  `
+  `;
