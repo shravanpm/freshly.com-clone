@@ -1,28 +1,26 @@
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { AddIcon } from "@chakra-ui/icons";
-import {
-  Box,
-  Button,
-  Flex,
-  Heading,
-  Image,
-  Stack,
-  Text,
-} from "@chakra-ui/react";
+import { Box, Heading, Image, Text } from "@chakra-ui/react";
 import {
   Modal,
   ModalOverlay,
   ModalContent,
-  ModalHeader,
-  ModalFooter,
-  ModalBody,
-  ModalCloseButton,
   useDisclosure,
 } from "@chakra-ui/react";
-import React from "react";
+
+import { addToCart } from "../../Redux/AppReducer/action";
 import styles from "./Card.module.css";
+import { CartModal } from "./CartModal/CartModal";
 
 function Card({ data }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const dispatch = useDispatch();
+
+  const cartData = useSelector((state) => state.appReducer.cart);
+  const handleAdd = (payload) => {
+    dispatch(addToCart(payload));
+  };
   return (
     <Box w="200px" h="310px">
       <>
@@ -30,90 +28,7 @@ function Card({ data }) {
           <Modal isOpen={isOpen} onClose={onClose} size="2xl">
             <ModalOverlay />
             <ModalContent>
-              <Box
-                h={"150px"}
-                borderBottom="1px solid"
-                paddingRight="20px"
-                paddingLeft="20px"
-              >
-                <Box h="40px">
-                  <ModalCloseButton />
-                </Box>
-                <Flex justifyContent={"space-between"}>
-                  <Stack>
-                    <Text size="md">
-                      <b>{data.title}</b>
-                    </Text>
-                    <Text>{data.subTitle}</Text>
-                    <Flex justifyContent={"space-between"}>
-                      <Flex w="90%" mr="100px">
-                        {data.highlight.split(",").map((item) => (
-                          <Text mr="10px">{` ${item}   `}</Text>
-                        ))}
-                      </Flex>
-                      <Flex
-                        float={"right"}
-                        border="1px solid"
-                        // ml="80px"
-                        justifyItems={"flex-end"}
-                        alignContent="end"
-                      >
-                        <Button>Add</Button>
-                      </Flex>
-                    </Flex>
-                  </Stack>
-                  {/* Body */}
-                </Flex>
-              </Box>
-
-              <ModalBody>
-                <Flex
-                  justifyContent={"space-between"}
-                  h="400px"
-                  overflow={"scroll"}
-                >
-                  <Box w="46%" border={"1px solid red"}>
-                    <Stack>
-                      <Box>
-                        <Image w="90%" h="180px" src={data.img_1} alt="image" />
-                      </Box>
-                      <Box>
-                        <Image w="90%" h="180px" src={data.img_2} alt="image" />
-                      </Box>
-                    </Stack>
-                  </Box>
-
-                  <Box w="52%" ml="1px" border={"1px solid red"}>
-                    <Stack>
-                      <Text mt="15px" paddingLeft="20px">
-                        What makes this dish special
-                      </Text>
-                      <Box paddingLeft="10px" borderLeft="3px solid">
-                        <Text noOfLines={[1, 2, 3]}>{data.desc1}</Text>
-                      </Box>
-                      <Box paddingLeft="10px" borderLeft="3px solid">
-                        <Text noOfLines={[1, 2, 3]}>{data.desc2}</Text>
-                      </Box>
-                      <Box paddingLeft="10px" borderLeft="3px solid">
-                        <Text noOfLines={[1, 2, 3]}>{data.desc3}</Text>
-                      </Box>
-                      <Box paddingLeft="10px" borderLeft="3px solid">
-                        <Text noOfLines={[1, 2, 3]}>{data.desc4}</Text>
-                      </Box>
-                      <Box paddingLeft="10px" borderLeft="3px solid">
-                        <Text noOfLines={[1, 2, 3]}>{data.desc5}</Text>
-                      </Box>
-                    </Stack>
-                  </Box>
-                </Flex>
-              </ModalBody>
-
-              {/* <ModalFooter>
-                <Button colorScheme="blue" mr={3} onClick={onClose}>
-                  Close
-                </Button>
-                <Button variant="ghost">Secondary Action</Button>
-              </ModalFooter> */}
+              <CartModal data={data} />
             </ModalContent>
           </Modal>
           <Box
@@ -142,6 +57,7 @@ function Card({ data }) {
               objectFit={"cover"}
               src={data.img_1}
               borderRadius="10px"
+              transform="scale(1.05)"
               className={styles.zoom}
             />
           </Box>
@@ -170,6 +86,9 @@ function Card({ data }) {
           float={"right"}
           bottom="0"
           cursor={"pointer"}
+          onClick={() => {
+            handleAdd(data);
+          }}
         >
           <AddIcon color="white" />
         </Box>

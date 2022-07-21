@@ -1,16 +1,12 @@
 import "./App.css";
-import AllRoutes from "./Components/LandingPage/components/AllRoutes"
-
+import Cart from "./Pages/Cart/Cart";
 
 function App() {
-
-
-	return <div className="App">
-    <AllRoutes />
-  </div>;
-
-
-
+  return (
+    <div className="App">
+      <Cart />
+    </div>
+  );
 }
 
 export default App;
