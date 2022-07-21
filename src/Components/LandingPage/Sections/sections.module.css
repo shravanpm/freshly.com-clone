@@ -1,16 +1,81 @@
-.weBelieveBox{
-    width: 700px;
-    text-align: left;
-    padding: 40px;
-    background-color: white;
+.weBelieveMainBox {
+	margin-top: 60px;
+	display: flex;
+	position: relative;
+	justify-content: flex-end;
+	align-items: center;
 }
-.weBelieveMainBox{
-    position: relative;
-    width: 70%;
-    right:0;
-    height: 400px;
-    background-image: url("https://assets-global.website-files.com/5d03b4e130118314af624b20/61f1275059fd961964f53287_22_Homepage_EatingBetterEasy_BG_866x708.jpg");
-    background-position: 50% 50%;
-    background-size: cover;
-    background-repeat: no-repeat;
+.weBelieveBox {
+	top: 30%;
+	width: 750px;
+	position: absolute;
+	left: 0;
+	right: auto;
+	bottom: auto;
+	padding: 46px;
+	background-color: #fff;
+	text-align: left;
+}
+
+.imageBox {
+	width: 70%;
+}
+
+.healthyMealsMainBox {
+	margin-top: 60px;
+	display: flex;
+	position: relative;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.healthyMealsBox {
+	position: absolute;
+	top: 30%;
+	width: 750px;
+	left: auto;
+	right: 0;
+	bottom: auto;
+	padding: 46px;
+	background-color: #fff;
+	text-align: left;
+}
+
+.healthyMealsBox span {
+	color: blue;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+	.weBelieveMainBox {
+		flex-direction: column;
+		position: static;
+		width: 100%;
+		align-items: center;
+	}
+	.imageBox {
+		width: 100%;
+	}
+	.weBelieveBox {
+		width: 100%;
+		position: static;
+		
+		text-align: center;
+	}
+	.weBelieveBox > button {
+		width: 100%;
+	}
+	.healthyMealsMainBox {
+		flex-direction: column-reverse;
+		position: static;
+		width: 100%;
+		align-items: center;
+	}
+	.healthyMealsBox {
+		width: 100%;
+		position: static;
+		
+		text-align: center;
+	}
 }

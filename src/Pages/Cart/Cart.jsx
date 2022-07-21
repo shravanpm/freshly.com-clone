@@ -10,13 +10,17 @@ import {
   RadioGroup,
   Radio,
   SimpleGrid,
+  Icon,
 } from "@chakra-ui/react";
 
 import Card from "../../Components/Cart/Card";
 import axios from "axios";
 import { useSearchParams } from "react-router-dom";
-import { getData } from "../../Redux/AppReducer/action";
+import { clearCart, getData } from "../../Redux/AppReducer/action";
 import { useDispatch, useSelector } from "react-redux";
+import { Sidebar } from "../../Components/Cart/Sidebar";
+import CartBox from "../../Components/Cart/CartBox";
+import { CgShoppingCart } from "react-icons/cg";
 
 function Cart() {
   const [sidebarVisible, toggleSidebar] = useState(false);
@@ -33,6 +37,12 @@ function Cart() {
   const [sortBy, setSortBy] = useState(urlSortBy || "");
 
   const [diet, setDeit] = useState([]);
+  const [cartTotal, setCartTotal] = useState({
+    regTotal: 0,
+    currentTotal: 0,
+  });
+
+  const cartData = useSelector((state) => state.appReducer.cart);
   const foods = data.filter((food) => {
     if (diet.length === 0) {
       return food;
@@ -45,14 +55,47 @@ function Cart() {
       }
     }
   });
-  // console.log(foods);
-  //Modal
 
-  const handleModal = (v) => {
-    // BasicUsage(v);
+  const clearCartFn = () => {
+    dispatch(clearCart());
   };
+
   const handleSidebarToggle = () => {
     toggleSidebar(!sidebarVisible);
+  };
+
+  const handlePriceChange = (p) => {
+    if (p < 6) {
+      setCartTotal({
+        ...cartTotal,
+        currentTotal: (11.79 * p).toFixed(2),
+        regTotal: (11.79 * p).toFixed(2),
+      });
+    } else if (p < 8) {
+      setCartTotal({
+        ...cartTotal,
+        currentTotal: (9.99 * p).toFixed(2),
+        regTotal: (11.79 * p).toFixed(2),
+      });
+    } else if (p < 10) {
+      setCartTotal({
+        ...cartTotal,
+        currentTotal: (9.49 * p).toFixed(2),
+        regTotal: (11.79 * p).toFixed(2),
+      });
+    } else if (p < 12) {
+      setCartTotal({
+        ...cartTotal,
+        currentTotal: (9.29 * p).toFixed(2),
+        regTotal: (11.79 * p).toFixed(2),
+      });
+    } else if (p === 12) {
+      setCartTotal({
+        ...cartTotal,
+        currentTotal: (8.99 * p).toFixed(2),
+        regTotal: (11.79 * p).toFixed(2),
+      });
+    }
   };
 
   const handleCheckbox = (e) => {
@@ -65,17 +108,18 @@ function Cart() {
       newDiet.push(option);
     }
     setDeit(newDiet);
-    // console.log(diet);
   };
+
+  useEffect(() => {
+    handlePriceChange(cartData.length);
+  }, [cartData]);
 
   useEffect(() => {
     let Category = searchParams.get("category") || category;
     if (!category) {
       Category = "";
     }
-
     let SortBy = searchParams.get("sortBy") || sortBy;
-
     let getParams;
     if (Category && SortBy) {
       getParams = {
@@ -139,89 +183,19 @@ function Cart() {
             </Button>
           </Box>
         </Flex>
-        <Flex border="solid 1px violet">
+        <Flex>
           {/* Left Side bar */}
           {sidebarVisible && (
-            <Box
-              w="25%"
-              // border="1px solid red"
-              h="80vh"
-              overflow={"scroll"}
-              pb="50px"
-            >
-              <Stack w="160px" p="5px">
-                <Box>
-                  <Heading as="h5" size="sm" pt="5px" textAlign={"left"}>
-                    Filter :
-                  </Heading>
-                </Box>
-                <Box>
-                  <Heading as="h6" size="sm" pt="5px" textAlign={"left"}>
-                    Diet :
-                  </Heading>
-                  <Stack>
-                    <Checkbox value="GlutenFree" onChange={handleCheckbox}>
-                      Gluten Free
-                    </Checkbox>
-                    <Checkbox value="CarbCautious" onChange={handleCheckbox}>
-                      Carb Conscious
-                    </Checkbox>
-                    <Checkbox value="PlantBased" onChange={handleCheckbox}>
-                      Plant-Based
-                    </Checkbox>
-                    <Checkbox value="DiaryFree" onChange={handleCheckbox}>
-                      Dairy-Free
-                    </Checkbox>
-                  </Stack>
-                </Box>
-
-                <Box>
-                  <Heading as="h6" size="sm" pt="5px" textAlign={"left"}>
-                    Categories :
-                  </Heading>
-                  <RadioGroup onChange={setCategory} value={category}>
-                    <Stack textAlign={"left"}>
-                      <Radio value="">Full Menu</Radio>
-                      <Radio value="SignatureCollection">
-                        Signature Collection
-                      </Radio>
-                      <Radio value="PurePlant">Purely Plant</Radio>
-                      <Radio value="FreshlyFitted">Freshly Fit</Radio>
-                      <Radio value="ProteinSides">Proteins & Sides</Radio>
-                    </Stack>
-                  </RadioGroup>
-                </Box>
-                <Box>
-                  <Heading as="h5" size="sm" pt="5px" textAlign={"left"}>
-                    Sort By :
-                  </Heading>
-                </Box>
-                <Box>
-                  <Heading as="h6" size="xs" pt="5px" textAlign={"left"}>
-                    Nutritional Macros :
-                  </Heading>
-                  <RadioGroup onChange={setSortBy} value={sortBy}>
-                    <Stack textAlign={"left"}>
-                      <Radio value="">Default</Radio>
-                      <Radio value="calories">Calories</Radio>
-                      <Radio value="carbs">Carbs</Radio>
-                      <Radio value="protein">Protein</Radio>
-                      <Radio value="totalFat">Total Fat</Radio>
-                      <Radio value="sodium">Sodium</Radio>
-                    </Stack>
-                  </RadioGroup>
-                </Box>
-              </Stack>
-            </Box>
+            <Sidebar
+              handleCheckbox={handleCheckbox}
+              category={category}
+              setCategory={setCategory}
+              sortBy={sortBy}
+              setSortBy={setSortBy}
+            />
           )}
           {/* Product Rendering div */}
-          <Box
-            w={"100%"}
-            h="80vh"
-            border="1px solid green"
-            overflow={"scroll"}
-            p="20px"
-          >
+          <Box w={"100%"} h="80vh" overflow={"scroll"} p="20px">
             <SimpleGrid minChildWidth="170px" spacing={30}>
               {foods.length !== 0
                 ? foods.map((food) => <Card data={food} key={food.id} />)
@@ -231,12 +205,7 @@ function Cart() {
         </Flex>
       </Box>
       {/* Right Side Cart Box*/}
-      <Box
-        backgroundColor="rgb(254,254,255)"
-        w="25%"
-        h="100vh"
-        border="1px solid blue"
-      >
+      <Box backgroundColor="rgb(254,254,255)" w="25%" h="100vh">
         <Flex
           // border="1px solid blue"
           p="10px"
@@ -251,14 +220,96 @@ function Cart() {
               </Text>
             </Box>
           </Flex>
-          <Box>
-            <Button variant={"link"}>
-              <Text color="blue" textDecoration={"underline"}>
-                Clear all
+          {cartData.length !== 0 && (
+            <Box>
+              <Button variant={"link"} onClick={clearCartFn}>
+                <Text color="blue" textDecoration={"underline"}>
+                  Clear all
+                </Text>
+              </Button>
+            </Box>
+          )}
+        </Flex>
+        <Stack mt="30px">
+          <CartBox cartTotal={cartTotal} />
+        </Stack>
+        {/* Bottom right cart button section */}
+        <Box h="25vh">
+          {cartData.length > 5 && (
+            <Box textAlign={"left"} p="10px 0px 0px 10px">
+              <Text
+                backgroundColor={"green"}
+                p="2px 5px"
+                w="140px"
+                color="white"
+                fontWeight={"500"}
+              >
+                {`You saved $${(
+                  cartTotal.regTotal - cartTotal.currentTotal
+                ).toFixed(2)}`}
               </Text>
+            </Box>
+          )}
+
+          {/* Subtotal */}
+          <Flex justifyContent={"space-between"} paddingRight="10px" pt="10px">
+            <Flex p="0px 0px 0px 10px">
+              {cartData.length !== 0 && (
+                <Box>
+                  <Box>
+                    <Text fontWeight={"700"}>{`Subtotal`}</Text>
+                  </Box>
+                  <Flex paddingRight={"0px"}>
+                    {cartData.length > 5 && (
+                      <Text
+                        pl="5px"
+                        as="s"
+                        color={"rgb(208,208,208)"}
+                        fontWeight={"700"}
+                      >{`$ ${cartTotal.regTotal}`}</Text>
+                    )}
+
+                    <Text fontWeight={"700"} ml="10px">
+                      {`  $ ${cartTotal.currentTotal}`}
+                    </Text>
+                  </Flex>
+                </Box>
+              )}
+            </Flex>
+            <Flex p="5px 12px" borderRadius={"20px"} pt="0px">
+              <Icon as={CgShoppingCart} w={7} h={7} pt="0px" />
+              <Text as="b" ml="2" pt="0px" color={"red"}>
+                {cartData.length}
+              </Text>
+            </Flex>
+          </Flex>
+          <Box p="0px 10px 0px 10px" mt="10px">
+            <Button
+              w="100%"
+              colorScheme={
+                cartData.length < 4
+                  ? `gray`
+                  : `${cartData.length > 12 ? `gray` : "blue"}`
+              }
+              disabled={cartData.length < 4 || cartData.length > 12}
+            >
+              {cartData.length < 4
+                ? `Add ${4 - cartData.length} To Continue`
+                : `${
+                    cartData.length > 12
+                      ? `Remove ${cartData.length - 12} To Continue`
+                      : "Next"
+                  }`}
             </Button>
           </Box>
-        </Flex>
+          {cartData.length > 3 && cartData.length < 12 && (
+            <Box pt="5px">
+              <Text as="b" color="rgb(53,116,113)">
+                The more you add, the more you'll save
+              </Text>
+            </Box>
+          )}
+        </Box>
       </Box>
     </Flex>
   );

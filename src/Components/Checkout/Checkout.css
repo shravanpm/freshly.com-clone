@@ -1,0 +1,65 @@
+*{
+    margin: 0%;
+    padding: 0%;
+ }
+ .Main{
+     background-color: #fffdf7;
+ }
+ .Body{
+     display: flex;
+     margin-top: 100px;
+     justify-content: space-between;
+     width: 80%;
+     margin: auto;
+     border: 1px solid tomato;
+     background-color:#fffdf7;
+ }
+ .div1{
+ 
+   width:60%;
+     margin-left: 2%;
+     background-color: #ffffff;
+   /* border: 1px solid green; */
+   display: flex;
+   margin-bottom: 100px;
+   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+   
+ }
+ /* .div1 div{
+     background-color: #ffffff;
+ } */
+ .Div2{
+     display: flex;
+     width: 40%;
+     margin-right: 2%;
+     margin-left: 2%;
+     margin-bottom: 100px;
+     /* border: 1px solid red; */
+     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+     background-color: #ffffff;
+   }
+  
+   .name{
+     display: flex;
+     justify-content: space-around;
+     /* margin-left: 30px;
+     margin-right: 20px; */
+   }
+   .Zip{
+     display: flex;
+     width: 90%;
+     margin-left: 3.3%;
+     justify-content: space-around;
+   }
+   .Zip>div{
+     width: 32%;
+     margin-left: 2%;
+   }
+   .address{
+     width: 90%;
+    margin-left: 4%;
+   }
+   #checkbox{
+     width: 90%;
+     margin-left: 4%;
+   }

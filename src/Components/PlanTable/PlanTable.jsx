@@ -20,66 +20,61 @@ const PlanTable = () => {
 
     return (
 
-        <div> 
+        <div>
             <PlanTableContainer>
-<table style={{margin: 'auto', width:"95%"}}>
+                <table style={{ margin: 'auto', width: "95%" }}>
 
-    <thead>
-        <tr >
-            {foodPlans.map(plan => {
-                return <th key={plan.id} style={ {padding:"0px"} } >
-                   <PlanTableContainer2 >
-                    <div style={{fontSize:"0.8em", fontWeight:"500"}}>{`${plan.title} meals`}</div>
-                    <div style={{
-                        fontSize: '0.5em',
-                        fontWeight: '400',
-                    }}>{`${plan.pricePerMeal} / meal`}</div>
-                   </ PlanTableContainer2 >
-                    </th>}
-            )}
-        </tr>
-    </thead>
-        <tbody>
-            <tr>
-                {foodPlans.map(plan => {
-                    return <td key={plan.id} style={ {padding:"0px"} } >
-                        <PlanTableContainer2 >
-
-                      
-                            <div
-                            style={{
-                                color: '#d0d0d0',
-                                textDecoration: 'line-through',
-
-                            }}
-                            >{plan.totalPrice}</div>
-                            <div 
-                            style={{
-                                color: '#357471',
-                            }}
-                            >{plan.discount}</div>
-
-                       </PlanTableContainer2 >
-                    </td>}
-
-                )}
-            </tr>
-        </tbody>
+                    <thead>
+                        <tr >
+                            {foodPlans.map(plan => {
+                                return <th key={plan.id} style={{ padding: "0px" }} >
+                                    <PlanTableContainer2 >
+                                        <div style={{ fontSize: "0.8em", fontWeight: "500" }}>{`${plan.title} meals`}</div>
+                                        <div style={{
+                                            fontSize: '0.5em',
+                                            fontWeight: '400',
+                                        }}>{`${plan.pricePerMeal} / meal`}</div>
+                                    </ PlanTableContainer2 >
+                                </th>
+                            }
+                            )}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            {foodPlans.map(plan => {
+                                return <td key={plan.id} style={{ padding: "0px" }} >
+                                    <PlanTableContainer2 >
 
 
-        
-   
-   
-</table>
-</PlanTableContainer>
+                                        <div
+                                            style={{
+                                                color: '#d0d0d0',
+                                                textDecoration: 'line-through',
 
+                                            }}
+                                        >{plan.totalPrice}</div>
+                                        <div
+                                            style={{
+                                                color: '#357471',
+                                            }}
+                                        >{plan.discount}</div>
 
+                                    </PlanTableContainer2 >
+                                </td>
+                            }
+
+                            )}
+                        </tr>
+                    </tbody>
+                </table>
+            </PlanTableContainer>
         </div>
     )
 }
 
 
-                    
+
 export default PlanTable
 const PlanTableContainer = styled.div`
    
@@ -93,7 +88,7 @@ const PlanTableContainer = styled.div`
     padding: 20px;
    
     `
-    const PlanTableContainer2 = styled.div`
+const PlanTableContainer2 = styled.div`
     
  width: 100%;
 height: 100px;
@@ -107,7 +102,7 @@ height: 100px;
 
 
 
-    
+
 
 
 

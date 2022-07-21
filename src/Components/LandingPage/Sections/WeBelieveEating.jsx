@@ -1,6 +1,6 @@
-import { Box, Flex, Text, Button } from "@chakra-ui/react";
+import { Box, Flex, Text, Button, Image } from "@chakra-ui/react";
 import React from "react";
-import styles from "./sections.module.css"
+import styles from "./sections.module.css";
 
 const WeBelieveEating = () => {
 	return (
@@ -17,7 +17,7 @@ const WeBelieveEating = () => {
 						eat in 3 minutes. Learn More
 					</Text>
 					<Button
-                        width="120px"
+						width={{ sm: "100%", md: "120px", lg: "120px", xl: "120px" }}
 						colorScheme="messenger"
 						variant="solid"
 						borderRadius="0"
@@ -27,7 +27,13 @@ const WeBelieveEating = () => {
 				</Flex>
 			</Box>
 
-            {/* Right image */}
+			{/* Right image */}
+			<Box className={styles.imageBox}>
+				<Image
+					src="https://assets-global.website-files.com/5d03b4e130118314af624b20/61f1275059fd961964f53287_22_Homepage_EatingBetterEasy_BG_866x708.jpg"
+					alt="image"
+				/>
+			</Box>
 		</Box>
 	);
 };

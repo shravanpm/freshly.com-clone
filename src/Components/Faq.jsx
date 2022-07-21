@@ -29,17 +29,17 @@ export const Faq = () => {
         Common Questions
       </Heading>
       <Accordion allowToggle >
-        <AccordionItem height={"20vh"}>
-          <h2>
+        <AccordionItem height={"fit-content"}>
+          <h3>
             <AccordionButton>
               <Box flex="1" textAlign="left">
-                <Heading >
+                <Heading size={'s'} fontWeight={'630'} pt={"4"} pb={"4"}>
                   How many servings are your meals?
                 </Heading>
               </Box>
               <AccordionIcon />
             </AccordionButton>
-          </h2>
+          </h3>
           <AccordionPanel p={4}>
             <Text>
               The majority of our meals are single serving and meant to feed an
@@ -61,17 +61,17 @@ export const Faq = () => {
           </AccordionPanel>
         </AccordionItem>
 
-        <AccordionItem h={"20vh"}>
-          <h2>
+        <AccordionItem h={"fit-content"}>
+          <h3>
             <AccordionButton>
               <Box flex="1" textAlign="left">
-                <Heading>
+                <Heading size={'s'} fontWeight={'630'} pt={"4"} pb={"4"}>
                   Do you accommodate dietary preferences?
                 </Heading>
               </Box>
               <AccordionIcon />
             </AccordionButton>
-          </h2>
+          </h3>
           <AccordionPanel p={4}>
             We accommodate a variety of dietary preferences, including plenty of
             gluten-free, dairy-free, peanut-free, plant-based, low-calorie, and
@@ -85,15 +85,15 @@ export const Faq = () => {
           </AccordionPanel>
         </AccordionItem>
 
-        <AccordionItem h={"20vh"}>
-          <h2>
+        <AccordionItem h={"fit-content"}>
+          <h3>
             <AccordionButton>
               <Box flex="1" textAlign="left">
-                <Heading>How long do the meals last?</Heading>
+                <Heading size={'s'} fontWeight={'630'} pt={"4"} pb={"4"}>How long do the meals last?</Heading>
               </Box>
               <AccordionIcon />
             </AccordionButton>
-          </h2>
+          </h3>
           <AccordionPanel pb={4}>
             Our meals are chef prepared and delivered fresh, so typically they
             have a refrigerated shelf life of about 3-5 days. Select items (such
@@ -109,15 +109,16 @@ export const Faq = () => {
           </AccordionPanel>
         </AccordionItem>
 
-        <AccordionItem h={"15vh"}>
-          <h2>
+        <AccordionItem h={"fit-content"}>
+          <h3>
             <AccordionButton>
               <Box flex="1" textAlign="left">
-                <Heading>How do I heat up my meals?</Heading>
+                <Heading size={'s'} fontWeight={'630'} pt={"4"} pb={"4"}
+                >How do I heat up my meals?</Heading>
               </Box>
               <AccordionIcon />
             </AccordionButton>
-          </h2>
+          </h3>
           <AccordionPanel pb={4}>
             Your meals will come to you fully prepared so you just have to heat
             ‘em up in the microwave. On the back of each meal, you’ll find our
@@ -133,15 +134,15 @@ export const Faq = () => {
           </AccordionPanel>
         </AccordionItem>
 
-        <AccordionItem h={"15vh"}>
-          <h2>
+        <AccordionItem h={"fit-content"}>
+          <h3>
             <AccordionButton>
               <Box flex="1" textAlign="left">
-                <Heading>How does shipping work?</Heading>
+                <Heading size={'s'} fontWeight={'630'} pt={"4"} pb={"4"} >How does shipping work?</Heading>
               </Box>
               <AccordionIcon />
             </AccordionButton>
-          </h2>
+          </h3>
           <AccordionPanel pb={4}>
             To help guarantee your meals arrive in the freshest condition, there
             is a small shipping fee associated with your order. We deliver to
@@ -154,15 +155,16 @@ export const Faq = () => {
           </AccordionPanel>
         </AccordionItem>
 
-        <AccordionItem h={"15vh"}>
-          <h2>
+        <AccordionItem h={"fit-content"}>
+          <h3>
             <AccordionButton>
               <Box flex="1" textAlign="left">
-                <Heading>How does the subscription work?</Heading>
+                <Heading size={'s'} fontWeight={'630'} pt={"4"} pb={"4"}>
+                  How does the subscription work?</Heading>
               </Box>
               <AccordionIcon />
             </AccordionButton>
-          </h2>
+          </h3>
           <AccordionPanel pb={4}>
             Every week you get to pick your selection of meals from our weekly
             rotation of 50+ options. Choose any number of meals between 4 and 12

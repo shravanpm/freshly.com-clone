@@ -1,22 +1,18 @@
 import "./App.css";
-import NavbarSecond from "./Components/NavbarSecond";
 import DateSelector from "./Pages/DateSelector/DateSelector";
-// import { Plans } from "./Pages/Plans/plans";
-
 
 // import AllRoutes from "./Components/LandingPage/components/AllRoutes"
 
+// import { Plans } from "./Pages/Plans/plans";
 
 function App() {
 
-
-  return <div className="App">
-    {/* <DateSelector/> */}
-    {/* <Plans/> */}
-
-
+	return <div className="App">
+    {/* <AllRoutes /> */}
+    <DateSelector/>
 
   </div>;
+
 
 
 
