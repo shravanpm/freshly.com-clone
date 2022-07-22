@@ -29,10 +29,11 @@ export const reducer = (state = initialState, action) => {
         isLoading: true,
         isLoading: false,
       });
+
       return {
         ...state,
         isLoading: true,
-        isLoading: false,
+        isError: false,
       };
     }
 
@@ -67,20 +68,20 @@ export const reducer = (state = initialState, action) => {
     case types.ADD_DATA_TO_CART_REQ: {
       return {
         ...state,
-        isLoading: true,
+
         isError: false,
       };
     }
     case types.ADD_DATA_TO_CART_SUCCESS: {
       saveData("freshlyAppState", {
         ...state,
-        isLoading: false,
+
         isError: false,
         cart: [...state.cart, payload],
       });
       return {
         ...state,
-        isLoading: false,
+
         isError: false,
         cart: [...state.cart, payload],
       };
@@ -88,7 +89,7 @@ export const reducer = (state = initialState, action) => {
     case types.ADD_DATA_TO_CART_FAILURE: {
       saveData("freshlyAppState", {
         ...state,
-        isLoading: false,
+
         isError: true,
       });
       return {
@@ -111,7 +112,7 @@ export const reducer = (state = initialState, action) => {
       });
       saveData("freshlyAppState", {
         ...state,
-        isLoading: false,
+
         isError: false,
         cart: data,
       });
