@@ -54,7 +54,7 @@ export const SignUp = () => {
     dispatch(Register(state))
     .then(r=>{
       if(r===REGISTER_SUCCESS){
-        console.log('loginSuccess',state)
+        // console.log('loginSuccess',state)
          navigate('/login',{replace:true})
       }
     });
@@ -130,7 +130,7 @@ const SignUpWrapper = styled.div`
 
 const SignUpBox = styled.div`
   width: 50%;
-  height: 50vh;
+  height: fit-content;
   border: 1px solid red;
   background-color: white;
   opacity: 0.8;
