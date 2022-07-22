@@ -13,19 +13,20 @@ export const registerSuccess = (payload) => ({
    payload,
 });
 
-export const registerFailure = () => ({
+export const registerFailure = (payload) => ({
    type: types.REGISTER_FAILURE,
+   payload,
 });
 
 export const Register = (payload) => (dispatch) => {
    dispatch(registerRequest());
-   return axios.post('https://masai-api-mocker.herokuapp.com/auth/register', payload)
+   return axios.post('https://strawberrynets-backend.herokuapp.com/register', payload)
       .then((r) => {
          dispatch(registerSuccess(r.data))
          return types.REGISTER_SUCCESS
       })
       .catch(e => {
-         dispatch(registerFailure())
+         dispatch(registerFailure(e))
          return types.REGISTER_FAILURE
       })
 }
@@ -41,19 +42,20 @@ export const loginSuccess = (payload) => ({
    payload,
 });
 
-export const loginFailure = () => ({
+export const loginFailure = (payload) => ({
    type: types.LOGIN_FAILURE,
+   payload,
 });
 
 export const login = (params) => (dispatch) => {
    dispatch(loginRequest());
-   return axios.post('https://masai-api-mocker.herokuapp.com/auth/login',params)
+   return axios.post('https://strawberrynets-backend.herokuapp.com/login',params)
       .then((r) => {
          dispatch(loginSuccess(r.data.token))
          return types.LOGIN_SUCCESS
       })
       .catch(e => {
-         dispatch(loginFailure())
+         dispatch(loginFailure(e))
          return types.LOGIN_FAILURE
       })
 }

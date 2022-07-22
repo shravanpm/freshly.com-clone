@@ -15,21 +15,23 @@ import { LOGIN_SUCCESS } from "../../Redux/AuthReducer/actionTypes";
 
 export const Login = () => {
   const [email, setEmail] = useState("");
-  const [mobile, setMobile] = useState(0);
+  const [password, setPassword] = useState('');
   const isLoading = useSelector((state) => state.authReducer.isLoading);
     const dispatch= useDispatch();
     const navigate= useNavigate();
 
 
   const handleLogin = () => {
-    if(email && mobile){
+    if(email && password){
         let params={
-          email,mobile
+          email,
+          password,
         }
         dispatch(login(params))
         .then(r=>{
           if(r===LOGIN_SUCCESS){
-            console.log('logindone',email,mobile)
+            console.log('logindone',email)
+            navigate('/')
           }
         })
     }
@@ -65,9 +67,9 @@ export const Login = () => {
             <FormLabel>Password</FormLabel>
             <Input
               placeholder="Enter your password"
-              type={'number'}
-              value={mobile}
-              onChange={(e) => setMobile(e.target.value)}
+              type={'password'}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
             />
           </FormControl>
 
@@ -84,7 +86,7 @@ export const Login = () => {
               <Link to="#">Forgot password ?</Link>
             </Text>
             <Text color={"blue"}>
-              Don't have an account? <Link to="#">Get Started</Link>
+              Don't have an account? <Link to="/signup">Get Started</Link>
             </Text>
           </Flex>
         </Flex>

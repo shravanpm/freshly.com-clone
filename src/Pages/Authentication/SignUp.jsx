@@ -18,9 +18,9 @@ import { REGISTER_SUCCESS } from "../../Redux/AuthReducer/actionTypes";
 const initState = {
   name: "freshly",
   email: "",
-  password: "Freshly@123",
+  password: "",
   username: "Fresly",
-  mobile: 0,
+  mobile: "12345678",
   description: "OrderFromFreshly",
 };
 
@@ -33,10 +33,10 @@ const reducer=(state,action)=>{
         email:action.payload,
       }
     
-    case "mobile":
+    case "password":
       return {
         ...state,
-        mobile: action.payload,
+        password: action.payload,
       };
 
     default:
@@ -81,9 +81,9 @@ export const SignUp = () => {
             <Input
               placeholder="Zip"
               flex={1}
-              value={state.mobile}
+              value={state.password}
               onChange={(e) =>
-                setter({ type: "mobile", payload: e.target.value })
+                setter({ type: "password", payload: e.target.value })
               }
             />
             <Button
