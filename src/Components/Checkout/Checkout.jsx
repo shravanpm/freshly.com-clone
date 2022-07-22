@@ -32,12 +32,12 @@ export const Checkout = () => {
                   onChange={handleInputChange}
                 />
                 {!isError ? (
-                <FormHelperText>
-                  Enter the email you'd like to receive the newsletter on.
-                </FormHelperText>
-              ) : (
-                <FormErrorMessage>can't be empty</FormErrorMessage>
-              )}
+                  <FormHelperText>
+                    Enter the email you'd like to receive the newsletter on.
+                  </FormHelperText>
+                ) : (
+                  <FormErrorMessage>can't be empty</FormErrorMessage>
+                )}
               </div>
               <div>
                 <FormLabel>Last Name</FormLabel>

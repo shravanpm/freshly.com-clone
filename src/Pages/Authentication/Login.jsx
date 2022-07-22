@@ -22,7 +22,7 @@ export const Login = () => {
         m={"10rem auto"}
         bg="whiteAlpha.900"
       >
-        <Heading fontSize={'4rem'}>Log In</Heading>
+        <Heading fontSize={"4rem"}>Log In</Heading>
         <Flex
           h={"70%"}
           w={"100%"}
@@ -42,8 +42,10 @@ export const Login = () => {
             Submit
           </Button>
           <Flex justify={"space-around"}>
-          <Text color={'blue'}><Link to="#">Forgot password ?</Link></Text>
-            <Text color={'blue'}>
+            <Text color={"blue"}>
+              <Link to="#">Forgot password ?</Link>
+            </Text>
+            <Text color={"blue"}>
               Don't have an account? <Link to="#">Get Started</Link>
             </Text>
           </Flex>
