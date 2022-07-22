@@ -58,7 +58,7 @@ export const SignUp = () => {
     .then(r=>{
       if(r===REGISTER_SUCCESS){
         console.log('loginSuccess',state)
-        //  navigate('/',{replace:true})
+         navigate('/login',{replace:true})
       }
     })
   };

@@ -45,11 +45,11 @@ export const loginFailure = () => ({
    type: types.LOGIN_FAILURE,
 });
 
-export const Login = (payload) => (dispatch) => {
+export const login = (params) => (dispatch) => {
    dispatch(loginRequest());
-   return axios.post('https://masai-api-mocker.herokuapp.com/auth/login', payload)
+   return axios.post('https://masai-api-mocker.herokuapp.com/auth/login',params)
       .then((r) => {
-         dispatch(loginSuccess(r.data))
+         dispatch(loginSuccess(r.data.token))
          return types.LOGIN_SUCCESS
       })
       .catch(e => {
