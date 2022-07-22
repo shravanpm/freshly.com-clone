@@ -30,7 +30,7 @@ export const CartModal = ({ data }) => {
       <Box
         h={"150px"}
         // borderBottom="1px solid"
-        paddingRight="22px"
+        paddingRight="23px"
         paddingLeft="22px"
         mb="-10px"
       >
