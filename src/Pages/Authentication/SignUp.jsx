@@ -11,70 +11,64 @@ import {
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import {useNavigate} from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 import { Register } from "../../Redux/AuthReducer/action";
 import { REGISTER_SUCCESS } from "../../Redux/AuthReducer/actionTypes";
 
+const initState = {
+  name: "freshly",
+  email: "",
+  password: "Freshly@123",
+  username: "Fresly",
+  mobile: 0,
+  description: "OrderFromFreshly",
+};
 
-const initState={
-  name:'freshly',
-  email:'',
-  password:'Freshly@123',
-  username:'Fresly',
-  mobile:0,
-  description:'OrderFromFreshly',
-}
-
-const reducer=(state,action)=>{
-  switch(action.type){
+const reducer = (state, action) => {
+  switch (action.type) {
     // case 'name':
     //   return{
     //     ...state,
     //     name:action.payload,
     //   }
-      case 'email':
-      return{
+    case "email":
+      return {
         ...state,
-        email:action.payload,
-      }
-      // case 'password':
-      // return{
-      //   ...state,
-      //   password:action.payload,
-      // }
-      // case 'username':
-      // return{
-      //   ...state,
-      //   username:action.payload,
-      // }
-      case 'mobile':
-      return{
+        email: action.payload,
+      };
+    // case 'password':
+    // return{
+    //   ...state,
+    //   password:action.payload,
+    // }
+    // case 'username':
+    // return{
+    //   ...state,
+    //   username:action.payload,
+    // }
+    case "mobile":
+      return {
         ...state,
-        mobile:action.payload,
-      }
-     
-      default:
-        return state;
+        mobile: action.payload,
+      };
+
+    default:
+      return state;
   }
-}
-
-
+};
 
 export const SignUp = () => {
-  const [state,setter]= useReducer(reducer,initState);
-  const dispatch= useDispatch();
-  const navigate= useNavigate();
-  
+  const [state, setter] = useReducer(reducer, initState);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleChange = () => {
-   
-    dispatch(Register(state))
-    .then(r=>{
-      if(r===REGISTER_SUCCESS){
-        console.log('loginSuccess',state)
+    dispatch(Register(state)).then((r) => {
+      if (r === REGISTER_SUCCESS) {
+        console.log("loginSuccess", state);
         //  navigate('/',{replace:true})
       }
-    })
+    });
   };
   return (
     <>
@@ -90,18 +84,18 @@ export const SignUp = () => {
             <Input
               placeholder="Email"
               flex={2}
-            
               value={state.email}
-              onChange={(e)=>
-                setter({type:'email',payload:e.target.value})}
+              onChange={(e) =>
+                setter({ type: "email", payload: e.target.value })
+              }
             />
             <Input
               placeholder="Zip"
               flex={1}
-             
               value={state.mobile}
-              onChange={(e)=>
-                setter({type:'mobile',payload:e.target.value})}
+              onChange={(e) =>
+                setter({ type: "mobile", payload: e.target.value })
+              }
             />
             <Button
               bg={"blue"}
