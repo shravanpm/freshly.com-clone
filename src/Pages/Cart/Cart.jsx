@@ -11,6 +11,7 @@ import {
   Radio,
   SimpleGrid,
   Icon,
+  CircularProgress,
 } from "@chakra-ui/react";
 
 import Card from "../../Components/Cart/Card";
@@ -27,6 +28,8 @@ function Cart() {
   let [searchParams, setSearchParams] = useSearchParams();
 
   const data = useSelector((state) => state.appReducer.data);
+  const loading = useSelector((state) => state.appReducer.isLoading);
+  console.log(loading);
 
   const dispatch = useDispatch();
   const urlcategory = searchParams.get("category");
@@ -196,11 +199,14 @@ function Cart() {
           )}
           {/* Product Rendering div */}
           <Box w={"100%"} h="80vh" overflow={"scroll"} p="20px">
-            <SimpleGrid minChildWidth="170px" spacing={30}>
-              {foods.length !== 0
-                ? foods.map((food) => <Card data={food} key={food.id} />)
-                : null}
-            </SimpleGrid>
+            {loading && <CircularProgress isIndeterminate value={"50"} />}
+            {!loading && (
+              <SimpleGrid minChildWidth="170px" spacing={30}>
+                {foods.length !== 0
+                  ? foods.map((food) => <Card data={food} key={food.id} />)
+                  : null}
+              </SimpleGrid>
+            )}
           </Box>
         </Flex>
       </Box>
@@ -230,9 +236,15 @@ function Cart() {
             </Box>
           )}
         </Flex>
-        <Stack mt="30px">
-          {cartData.length == 0 && <Box mt="180px">Some Random Text</Box>}
-          {<CartBox cartTotal={cartTotal} />}
+        <Stack mt="30px" h="60vh">
+          {cartData.length == 0 && (
+            <Box mt="180px">
+              <Text fontWeight={"semibold"}>
+                Get started by adding at least 4 meals{" "}
+              </Text>
+            </Box>
+          )}
+          {cartData.length !== 0 && <CartBox cartTotal={cartTotal} />}
         </Stack>
         {/* Bottom right cart button section */}
         <Box h="25vh">
@@ -252,12 +264,12 @@ function Cart() {
             </Box>
           )}
 
-          {/* Subtotal */}
-          <Flex justifyContent={"space-between"} paddingRight="10px" pt="10px">
-            <Flex p="0px 0px 0px 10px">
+          {/* Subtotal final box*/}
+          <Flex justifyContent={"space-between"} p="5px">
+            <Flex p="8px 10px 0px 0px">
               {cartData.length !== 0 && (
-                <Box>
-                  <Box>
+                <Flex>
+                  <Box paddingLeft={"5px"}>
                     <Text fontWeight={"700"}>{`Subtotal`}</Text>
                   </Box>
                   <Flex paddingRight={"0px"}>
@@ -270,16 +282,21 @@ function Cart() {
                       >{`$ ${cartTotal.regTotal}`}</Text>
                     )}
 
-                    <Text fontWeight={"700"} ml="10px">
-                      {`  $ ${cartTotal.currentTotal}`}
+                    <Text fontWeight={"700"} ml="5px">
+                      {`$ ${cartTotal.currentTotal}`}
                     </Text>
                   </Flex>
-                </Box>
+                </Flex>
               )}
             </Flex>
-            <Flex p="5px 12px" borderRadius={"20px"} pt="0px">
-              <Icon as={CgShoppingCart} w={7} h={7} pt="0px" />
-              <Text as="b" ml="2" pt="0px" color={"red"}>
+            <Flex
+              p="5px 10px"
+              border="3px solid rgb(209,208,209)"
+              borderRadius={"20px"}
+              pt="0px"
+            >
+              <Icon as={CgShoppingCart} w={7} h={7} pt="2px" />
+              <Text as="b" ml="2" pt="2px" color={"red"}>
                 {cartData.length}
               </Text>
             </Flex>
