@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
 import { getDate } from "../../Redux/DateSelectorReducer/action";
 import { Faq } from "../../Components/Faq";
+import NavbarSecond from "../../Components/NavbarSecond";
 function DateSelector() {
   const DateSelector = useSelector((state) => state.dateReducer.date);
   const dispatch = useDispatch();
@@ -14,6 +15,9 @@ function DateSelector() {
 
   return (
     <div>
+      <Box>
+       <NavbarSecond />
+      </Box>
       <Box bg="#fffdf7" p={4} margin={"auto"} insetBlock={"0"}>
         <Heading
           mb={"3rem!important"}
