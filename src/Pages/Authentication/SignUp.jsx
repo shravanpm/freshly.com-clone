@@ -18,38 +18,25 @@ import { REGISTER_SUCCESS } from "../../Redux/AuthReducer/actionTypes";
 const initState = {
   name: "freshly",
   email: "",
-  password: "Freshly@123",
+  password: "",
   username: "Fresly",
-  mobile: 0,
+  mobile: "12345678",
   description: "OrderFromFreshly",
 };
 
-const reducer = (state, action) => {
-  switch (action.type) {
-    // case 'name':
-    //   return{
-    //     ...state,
-    //     name:action.payload,
-    //   }
-    case "email":
+
+const reducer=(state,action)=>{
+  switch(action.type){
+      case 'email':
+      return{
+        ...state,
+        email:action.payload,
+      }
+    
+    case "password":
       return {
         ...state,
-        email: action.payload,
-      };
-    // case 'password':
-    // return{
-    //   ...state,
-    //   password:action.payload,
-    // }
-    // case 'username':
-    // return{
-    //   ...state,
-    //   username:action.payload,
-    // }
-    case "mobile":
-      return {
-        ...state,
-        mobile: action.payload,
+        password: action.payload,
       };
 
     default:
@@ -63,10 +50,12 @@ export const SignUp = () => {
   const navigate = useNavigate();
 
   const handleChange = () => {
-    dispatch(Register(state)).then((r) => {
-      if (r === REGISTER_SUCCESS) {
-        console.log("loginSuccess", state);
-        //  navigate('/',{replace:true})
+   
+    dispatch(Register(state))
+    .then(r=>{
+      if(r===REGISTER_SUCCESS){
+        // console.log('loginSuccess',state)
+         navigate('/login',{replace:true})
       }
     });
   };
@@ -92,9 +81,9 @@ export const SignUp = () => {
             <Input
               placeholder="Zip"
               flex={1}
-              value={state.mobile}
+              value={state.password}
               onChange={(e) =>
-                setter({ type: "mobile", payload: e.target.value })
+                setter({ type: "password", payload: e.target.value })
               }
             />
             <Button
@@ -141,7 +130,7 @@ const SignUpWrapper = styled.div`
 
 const SignUpBox = styled.div`
   width: 50%;
-  height: 50vh;
+  height: fit-content;
   border: 1px solid red;
   background-color: white;
   opacity: 0.8;

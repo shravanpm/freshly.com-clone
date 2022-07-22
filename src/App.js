@@ -1,6 +1,4 @@
 import "./App.css";
-import Cart from "./Pages/Cart/Cart";
-import DateSelector from "./Pages/DateSelector/DateSelector";
 import AllRoutes from "./Components/AllRoutes";
 import NavbarSecond from "./Components/NavbarSecond";
 
