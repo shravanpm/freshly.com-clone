@@ -27,26 +27,12 @@ const initState={
 
 const reducer=(state,action)=>{
   switch(action.type){
-    // case 'name':
-    //   return{
-    //     ...state,
-    //     name:action.payload,
-    //   }
       case 'email':
       return{
         ...state,
         email:action.payload,
       }
-      // case 'password':
-      // return{
-      //   ...state,
-      //   password:action.payload,
-      // }
-      // case 'username':
-      // return{
-      //   ...state,
-      //   username:action.payload,
-      // }
+     
       case 'mobile':
       return{
         ...state,
