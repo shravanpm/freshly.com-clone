@@ -43,9 +43,15 @@ const TopSection = () => {
 							>
 								Explore Meals
 							</Button>
-							<Button colorScheme="messenger" variant="solid" borderRadius="0">
-								Get Started
-							</Button>
+							<Link href="http://localhost:3000/signup">
+								<Button
+									colorScheme="messenger"
+									variant="solid"
+									borderRadius="0"
+								>
+									Get Started
+								</Button>
+							</Link>
 						</HStack>
 						<Text fontSize="15px" fontWeight="bold" p="20px">
 							Enjoy flexible weekly plans, with meals as low as

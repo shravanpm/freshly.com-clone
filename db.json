@@ -6,7 +6,6 @@
       "DiaryFree": false,
       "PlantBased": true,
       "category": "PurePlant",
-
       "title": "Thai Green Curry Bowl",
       "subTitle": "with Sweet Potato, Mushrooms & Basmati Rice",
       "highlight": "Vegan,Vegetarian,Dairy Free,Plant-Based,Gluten Free",
@@ -566,7 +565,6 @@
       "img_2": "https://res.cloudinary.com/freshly/image/upload/c_fill,dpr_2,f_auto,h_383,w_580/v1638803152/production-meal-image-67840c3a-4462-4e1a-8746-cc49a14ca086.jpg",
       "id": 17
     },
-
     {
       "GlutenFree": true,
       "CarbCautious": false,
@@ -978,8 +976,6 @@
       "id": 30
     }
   ],
-
-  
   "plans": [
     {
       "title": "4",
@@ -995,7 +991,6 @@
       "discount": "$58.95",
       "id": 2
     },
-
     {
       "title": "6",
       "pricePerMeal": "$9.99",
@@ -1046,40 +1041,78 @@
       "id": 9
     }
   ],
-  "dates":[
-    { "date": " Monday, Jul 25",
-  "id":1},
-  { "date": " Tuesday, Jul 26",
-  "id":2},
-  { "date": " Wednesday, Jul 27",
-  "id":3},
-  { "date": " Thursday, Jul 28",
-  "id":4},
-  { "date": " Friday, Jul 29",
-  "id":5},
-  { "date": " Saturday, Jul 30",
-  "id":6},
-  { "date": " Sunday, Jul 31",
-  "id":7},
-  { "date": " Monday, Aug 1",
-  "id":8},
-  { "date": " Tuesday, Aug 2",
-  "id":9},
-  { "date": " Wednesday, Aug 3",
-  "id":10},
-  { "date": " Thursday, Aug 4",
-  "id":11},
-  { "date": " Friday, Aug 5",
-  "id":12},
-  { "date": " Saturday, Aug 6",
-  "id":13},
-  { "date": " Sunday, Aug 7",
-  "id":14},
-  { "date": " Monday, Aug 8",
-  "id":15},
-  { "date": " Tuesday, Aug 9",
-  "id":16}
+  "dates": [
+    {
+      "date": " Monday, Jul 25",
+      "id": 1
+    },
+    {
+      "date": " Tuesday, Jul 26",
+      "id": 2
+    },
+    {
+      "date": " Wednesday, Jul 27",
+      "id": 3
+    },
+    {
+      "date": " Thursday, Jul 28",
+      "id": 4
+    },
+    {
+      "date": " Friday, Jul 29",
+      "id": 5
+    },
+    {
+      "date": " Saturday, Jul 30",
+      "id": 6
+    },
+    {
+      "date": " Sunday, Jul 31",
+      "id": 7
+    },
+    {
+      "date": " Monday, Aug 1",
+      "id": 8
+    },
+    {
+      "date": " Tuesday, Aug 2",
+      "id": 9
+    },
+    {
+      "date": " Wednesday, Aug 3",
+      "id": 10
+    },
+    {
+      "date": " Thursday, Aug 4",
+      "id": 11
+    },
+    {
+      "date": " Friday, Aug 5",
+      "id": 12
+    },
+    {
+      "date": " Saturday, Aug 6",
+      "id": 13
+    },
+    {
+      "date": " Sunday, Aug 7",
+      "id": 14
+    },
+    {
+      "date": " Monday, Aug 8",
+      "id": 15
+    },
+    {
+      "date": " Tuesday, Aug 9",
+      "id": 16
+    },
+    {
+      "date": 16,
+      "id": 17
+    },
+    {
+      "date": 15,
+      "id": 18
+    }
   ]
 }
-
-   

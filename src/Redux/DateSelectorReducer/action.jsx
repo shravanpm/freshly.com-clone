@@ -22,6 +22,16 @@ const getDate = ()=>(dispatch)=>{
     )
 }
 
-export {getDate}
+    const postDate = (date)=>(dispatch)=>{
+       
+      dispatch({type:types.POST_DATE_SELECTOR_SUCCESS,payload:date})
+    }
+
+    
+
+export {getDate,postDate};
+        
+
+// export {getDate,postDate};
 
   

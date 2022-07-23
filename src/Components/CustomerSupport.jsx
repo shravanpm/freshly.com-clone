@@ -5,6 +5,8 @@ import {
     MenuList,
     MenuItem,
     Button,
+    color,
+    textDecoration,
 
 } from '@chakra-ui/react'
 import { ChevronDownIcon } from '@chakra-ui/icons'
@@ -14,7 +16,7 @@ function CustomerSupport() {
     return (
         <div>
             <Menu>
-                <MenuButton as={Button} rightIcon={<ChevronDownIcon style={{color:"blue"}}/>} style={{backgroundColor:"white", borderRadius:"0%"}}>
+                <MenuButton as={Button} rightIcon={<ChevronDownIcon style={{color:"blue"}}/>} style={{backgroundColor:"white", borderRadius:"0%" ,color:"blue" ,textDecoration:"underline"}}>
                    
                Customer Support
                 </MenuButton>
