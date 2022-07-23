@@ -20,8 +20,8 @@ const HelpQuestions = () => {
 	return (
 		<Box w="80%" m="3% auto">
 			<Grid templateColumns="repeat(3, 1fr)" gap={6}>
-				{questions.map((el) => (
-					<GridItem w="100%" h="10">
+				{questions.map((el,ind) => (
+					<GridItem w="100%" h="10" key={ind}>
 						{" "}
 						<Button w="25vw" colorScheme="teal" variant="outline">
 							{el}

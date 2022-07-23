@@ -19,8 +19,8 @@ const PromotedArticles = () => {
 		<Box align="left" w="80%" m="auto" mb="40px">
 			<Text fontSize="25px" mb="30px">Promoted articles</Text>
 			<Grid templateColumns="repeat(3, 1fr)" gap={6} mt="15px">
-				{questions.map((el) => (
-					<GridItem w="100%" h="10">
+				{questions.map((el,ind) => (
+					<GridItem w="100%" h="10" key={ind}>
 						{" "}
 						<Box borderBottom="1px" borderColor="gray.300" h="60px">
 							<Link
