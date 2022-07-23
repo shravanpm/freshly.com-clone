@@ -7,8 +7,9 @@ import {
 	Button,
 	Text,
 	Box,
-	Link,
+	Link
 } from "@chakra-ui/react";
+import { Link as RouterLink } from "react-router-dom";
 
 const TopSection = () => {
 	return (
@@ -43,7 +44,7 @@ const TopSection = () => {
 							>
 								Explore Meals
 							</Button>
-							<Link href="http://localhost:3000/signup">
+							<RouterLink to="/signup">
 								<Button
 									colorScheme="messenger"
 									variant="solid"
@@ -51,7 +52,7 @@ const TopSection = () => {
 								>
 									Get Started
 								</Button>
-							</Link>
+							</RouterLink>
 						</HStack>
 						<Text fontSize="15px" fontWeight="bold" p="20px">
 							Enjoy flexible weekly plans, with meals as low as

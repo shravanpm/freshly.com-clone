@@ -1,8 +1,7 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import HomePage from "../Components/LandingPage/Pages/HomePage";
-import Help from "../Components/LandingPage/Pages/Help";
-import SubmitARequest from "../Components/LandingPage/Pages/SubmitARequest";
+
 import Cart from "../Pages/Cart/Cart";
 import { Plans } from "../Pages/Plans/plans";
 import DateSelector from "../Pages/DateSelector/DateSelector";
@@ -10,6 +9,8 @@ import { MenuPlans } from "../Pages/MenuPlans/MenuPlans";
 import { Login } from "../Pages/Authentication/Login";
 import { SignUp } from "../Pages/Authentication/SignUp";
 import { Checkout } from "./Checkout/Checkout";
+import Help from "./LandingPage/Pages/Help/Help";
+import SubmitARequest from "./LandingPage/Pages/SubmitARequest";
 
 const AllRoutes = () => {
   return (
