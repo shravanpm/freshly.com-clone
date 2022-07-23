@@ -172,3 +172,11 @@ margin-left: -35px;
  margin-top: 10px;
  font-weight: bold;
 }
+.btn{
+ width: 90%;
+ justify-content: center;
+ margin: auto;
+ margin-top: 10px;
+ margin-left: 30px;
+ margin-bottom: 20px;
+}

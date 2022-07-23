@@ -9,8 +9,8 @@ import { Link, useParams } from "react-router-dom";
 import { Link as RouterLink } from "react-router-dom";
 
 function NavbarSecond() {
-const id = window.location.pathname
-console.log(id)
+	const id = window.location.pathname
+	console.log(id)
 
 
 
@@ -31,48 +31,106 @@ console.log(id)
 				</div>
 				<div>
 					<RouteWrapper style={{ paddingTop: "10px" }}>
-					
-						
+					{/* {id === "/checkout" ?   {}:{}} */}
 
-						
-						{id==="/deliverydate" ? <Link to="/plans" style={{
-							textDecoration: "underline",
-							color: "blue",
-						}}>Plans</Link> : <div >Plans</div>}
-						<div style={{ padding: "5px 8px " }}>
-							<Icon as={TbChevronRight} />
-						</div>
+						{id === "/deliverydate" ? <div style={{ display: "flex" }}>
+							<Link to="/plans" style={{
+								textDecoration: "underline",
+								color: "blue",
+							}}>Plans</Link>
 
-					   
+							<div style={{ padding: "5px 8px " }}>
+								<Icon as={TbChevronRight} />
+							</div>
 
-					
-						{id==="/checkout" ? <div>
-
-						<Link to="/deliverydate" style={{textDecoration: "underline",
-						color: "blue",
-						}}>Date</Link> 
-						<div style={{ padding: "5px 8px " }}>
-							<Icon as={TbChevronRight} />
-						</div>
-
-						<Link to="/plansandmenus" style={{textDecoration: "underline",
-						color: "blue",
-						}}>Meals</Link>
-						<div style={{ padding: "5px 8px " }}>
-							<Icon as={TbChevronRight} />
-						</div>
-						</div> : <div >
 							<div>Date</div>
-							<div style={{ padding: "5px 8px " }}>
-							<Icon as={TbChevronRight} />
-						</div>
-							<div>Meals</div>
-							<div style={{ padding: "5px 8px " }}>
-							<Icon as={TbChevronRight} />
-						</div>
 
-							</div>}
-						{/* <div>Checkout</div> */}
+							<div style={{ padding: "5px 8px " }}>
+								<Icon as={TbChevronRight} />
+							</div>
+
+							<div>Meals</div>
+
+							<div style={{ padding: "5px 8px " }}>
+								<Icon as={TbChevronRight} />
+							</div>
+
+							<div>Checkout</div>
+
+						</div>
+							: id === "/plans" ? 
+							<div style={{ display: "flex" }}>
+								<div>Plans</div>
+								<div style={{ padding: "5px 8px " }}>
+									<Icon as={TbChevronRight} />
+								</div>
+								<div>Date</div>
+
+								<div style={{ padding: "5px 8px " }}>
+									<Icon as={TbChevronRight} />
+								</div>
+
+								<div>Meals</div>
+
+								<div style={{ padding: "5px 8px " }}>
+									<Icon as={TbChevronRight} />
+								</div>
+
+								<div>Checkout</div>
+
+							</div>
+							
+					
+
+
+
+
+						: id === "/checkout" ?
+
+							<div style={{ display: "flex" }}>
+
+
+
+
+								<Link to="/plans" style={{
+									textDecoration: "underline",
+									color: "blue",
+								}}>Plans</Link>
+
+								<div style={{ padding: "5px 8px " }}>
+									<Icon as={TbChevronRight} />
+								</div>
+
+
+
+								<Link to="/deliverydate" style={{
+									textDecoration: "underline",
+									color: "blue",
+								}}>Date</Link>
+
+								<div style={{ padding: "5px 8px " }}>
+									<Icon as={TbChevronRight} />
+								</div>
+
+								<Link to="/plansandmenus" style={{
+									textDecoration: "underline",
+									color: "blue",
+								}}>Meals</Link>
+
+								<div style={{ padding: "5px 8px " }}>
+									<Icon as={TbChevronRight} />
+								</div>
+								<div>Checkout</div>
+
+							</div>
+
+							:
+							null
+						}
+
+
+
+
 					</RouteWrapper>
 				</div>
 
@@ -88,7 +146,9 @@ console.log(id)
 								textDecoration: "underline",
 								color: "blue",
 							}}
-						></div>
+						>
+
+						</div>
 						<div style={{ padding: "5px " }}>
 							<CustomerSupport />
 						</div>
@@ -114,3 +174,7 @@ const RouteWrapper = styled.div`
 	flex-direction: row;
 	justify-content: space-between;
 `;
+const dateWrapper = styled.div`
+display: flex;
+flex-direction: row;
+`

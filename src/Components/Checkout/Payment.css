@@ -1,0 +1,221 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.Main{
+    /* border: 1px solid red; */
+    width: 100%;
+    height: 100vh;
+}
+.Body{
+    border: 1px solid green;
+    margin-top: 70px;
+    display: flex;
+}
+.div1{
+    width: 52%;
+    border: 1px solid blue;
+    margin-left: 30px;
+    margin-top: 20px;
+    position: relative;
+}
+.del{
+    display: flex;
+    justify-content: space-around;
+}
+.del>div{
+    margin-top: 20px;
+    margin-left: -20px;
+}
+#change{
+    color: rgb(59, 144, 242);
+    text-decoration: underline;
+    margin-left: -90px;
+
+}
+.name{
+    display: flex;
+    width: 90%;
+    justify-content: space-around;
+    margin-left: 20px;
+    margin-top: 30px;
+}
+.name>div{
+    margin: auto;
+
+}
+.address{
+     width: 90%;
+     margin-left: 120px;
+     margin-top: 25px;
+}
+.Zip{
+    display: flex;
+    width: 90%;
+    margin-left: 10px;
+    margin-top: 25px;
+    justify-content: space-evenly;
+}
+#hr{
+    margin-top: 20px;
+    width: 90%;
+    margin-left: 20px;
+    color: black;
+}
+.btn{
+    width: 90%;
+    justify-content: center;
+    margin: auto;
+    margin-top: 10px;
+    margin-left: 30px;
+}
+
+
+
+
+
+
+
+
+
+   .Div2{
+     /* display: flex; */
+     margin-top: 20px;
+     width: 40%;
+     height: 340px;
+     margin-right: 2%;
+     margin-left: 2%;
+     margin-bottom: 100px;
+     /* border: 1px solid red; */
+     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+     background-color: #ffffff;
+   }
+   
+   .date{
+       width: 93%;
+       /* margin: 10px; */
+       margin-left: 10px;
+       margin-bottom: 7px;
+   }
+ .meals{
+   display: flex;
+   justify-content: space-between;
+   width: 89%;
+   margin-left: 15px;
+   margin-top: 10px;
+   margin-bottom: 10px;
+ }
+ 
+ .hr{
+   width: 89%;
+   justify-content: center;
+   margin-left: 15px;
+   /* margin-right: 15px; */ 
+ }
+ .shadow{
+   background-color: #f7f7f7;
+   width: 90%;
+   margin-left: 15px;
+   margin-top: 14px;
+ 
+ }
+ .discount1{
+   display: flex;
+   justify-content: space-between;
+   padding: 5px;
+ }
+ .discount2{
+   display: flex;
+   justify-content: space-between;
+   padding: 5px;
+ }
+ #p{
+   font-weight: bold;
+   font-size: 14px;
+ }
+ #price{
+   color: teal;
+   font-size: 14px;
+   font-weight: bold;
+ }
+ #price2{
+   color: black;
+   font-size: 14px;
+   font-weight: bold;
+ }
+ .shiping{
+   display: flex;
+   justify-content: space-between;
+   padding: 5px;
+   margin-left: 15px;
+   margin-right: 19px;
+   margin-top: 10px;
+ }
+ 
+ .Mymeal{
+   margin: 0;
+    
+ }
+ #para{
+   font-size: 23px;
+   font-weight: bold;
+   text-align: left;
+  margin-top: 50px;
+  margin-left: 5px;
+ }
+ .item-div{
+   display: flex;
+   width: 99%;
+   justify-content: space-around;
+   /* border: 1px solid red; */
+   margin-left: 10px;
+ }
+ .img-div{
+    width: 20%;
+  /* border: 1px solid teal; */
+  margin-left: -35px;
+ }
+ #img1{
+   width: 14px;
+ }
+ #img2{
+   width: 85%;
+   height: 50px;
+ }
+ .item-name{
+   width: 47%;
+   /* border: 1px solid blue; */
+   margin-left: -65px;
+ }
+ #para1{
+   width: 10px;
+   font-size: 19px;
+   font-weight: bold;
+   margin-top: 10px;
+ }
+ #meal-name{
+   margin-top: 10px;
+   font-weight: bold;
+ }
+ .payment{
+    width: 100%;
+    border: 1px solid red;
+    display: flex;
+    direction: row;
+ }
+ .acc{
+    width: 300px;
+ }
+ .box{
+    display: flex;
+    justify-content: space-around;
+ }
+ .box img{
+    margin-top: 4px;
+    /* margin-left: -10px; */
+ }
+ #paypal{
+    width: 35px;
+    height: 25px;
+    margin-left: -100px;
+ }
