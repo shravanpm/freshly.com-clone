@@ -64,10 +64,10 @@ export const SignUp = () => {
       <SignUpWrapper>
         <SignUpBox>
           <Box>
-            <Heading size={"3xl"}>Dinner’s ready!</Heading>
+            <Heading  size={"3xl"}>Dinner’s ready!</Heading>
           </Box>
           <Box>
-            <Heading>Chef-prepared, healthy meals delivered weekly</Heading>
+            <Heading >Chef-prepared, healthy meals delivered weekly</Heading>
           </Box>
           <form style={{ display: "flex", gap: "20px", padding: "3%" }}>
             <Input
@@ -103,7 +103,7 @@ export const SignUp = () => {
             <Flex>
               <Text>Already have an account?</Text>
               <Text color={"blue"}>
-                <Link to="#">Login</Link>
+                <Link to="/login">Login</Link>
               </Text>
             </Flex>
             <Flex>
@@ -131,11 +131,11 @@ const SignUpWrapper = styled.div`
 const SignUpBox = styled.div`
   width: 50%;
   height: fit-content;
-  border: 1px solid red;
   background-color: white;
   opacity: 0.8;
   margin: auto;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  padding:3%;
 `;
