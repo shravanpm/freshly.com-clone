@@ -31,6 +31,7 @@ import {
 import { Link as RouterLink } from "react-router-dom";
 
 const Navbar = () => {
+
 	const { isOpen, onOpen, onClose } = useDisclosure();
 	return (
 		<Flex
@@ -225,14 +226,15 @@ const Navbar = () => {
 				</HStack>
 			</Center>
 
-			{/* <Center>
+
+      {/* <Center>
 				<GiHamburgerMenu
 					className={styles.HamburgerIcon}
 					onClick={handleIconClick}
 				/>
 			</Center> */}
-		</Flex>
-	);
+    </Flex>
+  );
 };
 
 export default Navbar;
