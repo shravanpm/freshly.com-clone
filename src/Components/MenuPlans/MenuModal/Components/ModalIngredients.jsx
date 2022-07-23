@@ -9,7 +9,7 @@ import {
   AccordionIcon,
 } from "@chakra-ui/react";
 
-function CartModalIngredient({ data }) {
+export function MenuModalIngredient({ data }) {
   return (
     <>
       <Box p="10px" backgroundColor={"white"} mt="10px" h="fit-content">
@@ -44,7 +44,14 @@ function CartModalIngredient({ data }) {
             <AccordionItem h="fit-content">
               <AccordionButton>
                 <Box flex="1" textAlign="left">
-                  <Text color="blue">Show Complete Ingredients</Text>
+                  <Text
+                    color="blue"
+                    fontWeight={"semibold"}
+                    fontSize="14px"
+                    letterSpacing={"3"}
+                  >
+                    Show Complete Ingredients
+                  </Text>
                 </Box>
                 <AccordionIcon />
               </AccordionButton>
@@ -81,5 +88,3 @@ function CartModalIngredient({ data }) {
     </>
   );
 }
-
-export default CartModalIngredient;

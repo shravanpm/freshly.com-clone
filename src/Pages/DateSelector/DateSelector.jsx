@@ -21,8 +21,8 @@ function DateSelector() {
 
   return (
     <div>
-      <Box>
-       <NavbarSecond />
+      <Box style={{ position:"sticky", top:0 }}>
+       <NavbarSecond passPage={2} />
       </Box> 
       <Box bg="#fffdf7" p={4} margin={"auto"} insetBlock={"0"}>
         <Heading
@@ -39,7 +39,7 @@ function DateSelector() {
             width: "20em",
             overflowY: "scroll",
             height: "200px",
-            borderTop: "0.1px solid #000",
+            // borderTo: "0.1px solid #000",
             margin: "auto",
             marginBottom: "2rem",
           }}
@@ -47,8 +47,11 @@ function DateSelector() {
           {DateSelector.map((date) => {
             return (
               <div key={date.id} onClick={() => handleClick(date.date)}>
+
                 <DateBorder>
-                  <div>{date.date}</div>
+                  <div 
+                  >{date.date}</div>
+               
                 </DateBorder>
               </div>
             );
@@ -84,9 +87,18 @@ function DateSelector() {
 }
 export default DateSelector;
 const DateBorder = styled.div`
-  border: 0.1px solid black;
-  border-top: 0px;
+  border: 0.1px  solid black;
+  /* border-top: 0px; */
   text-align: left;
+  font-size: large;
   padding: 5px;
   background-color: white;
+  transition: margin 0.5s;
+  &:hover {
+   margin: 0.5%;
+   font-weight:500;
+  }
+   
+
 `;
+

@@ -8,8 +8,7 @@ import {
   AccordionPanel,
   AccordionIcon,
 } from "@chakra-ui/react";
-
-import { Nutrition } from "./Nutrition";
+import { Nutrition } from "../../../Cart/CartModal/Components/Nutrition";
 
 function ModalNutrition({ data }) {
   return (
@@ -97,7 +96,14 @@ function ModalNutrition({ data }) {
           <Accordion>
             <AccordionItem>
               <AccordionButton>
-                <Text color="blue">Show Complete Information</Text>
+                <Text
+                  color="blue"
+                  fontWeight={"semibold"}
+                  fontSize="14px"
+                  letterSpacing={"3"}
+                >
+                  Show Complete Information
+                </Text>
                 <AccordionIcon />
               </AccordionButton>
               <AccordionPanel pb={4}>

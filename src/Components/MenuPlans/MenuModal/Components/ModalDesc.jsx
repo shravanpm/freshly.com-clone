@@ -2,7 +2,7 @@ import React from "react";
 
 import { Box, Stack, Text } from "@chakra-ui/react";
 
-export const CartModalDesc = ({ data }) => {
+export const MenuModalDesc = ({ data }) => {
   return (
     <>
       <Stack backgroundColor={"white"}>
