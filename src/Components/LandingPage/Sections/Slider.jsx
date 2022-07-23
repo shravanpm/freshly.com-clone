@@ -4,16 +4,15 @@ import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from "react-icons/md";
 
 const Slider = () => {
 	let arr;
-	const [count, setcount] = useState(0);
 
-	let increasecount = () => {
-		setcount(count + 1);
-	};
-	let decreasecount = () => {
-		setcount(count - 1);
+	const [toggle, setToggle] = useState(0);
+
+	let toggleCount = () => {
+		if (toggle === 0) setToggle(1);
+		else setToggle(0);
 	};
 
-	if (count === 0) {
+	if (toggle === 0) {
 		arr = [
 			{
 				id: 1,
@@ -40,7 +39,7 @@ const Slider = () => {
 				text3: "Cindi",
 			},
 		];
-	} else if (count === 1) {
+	} else if (toggle === 1) {
 		arr = [
 			{
 				id: 1,
@@ -68,15 +67,11 @@ const Slider = () => {
 			},
 		];
 	}
-	//  onClick={count!=0?decreasecount:setcount(0)}
+
 	return (
 		<div className={style.mainslider1}>
 			<div className={style.sl1flex}>
-				<button
-					onClick={decreasecount}
-					className={style.showbtn}
-					disabled={count === 0}
-				>
+				<button onClick={toggleCount} className={style.showbtn}>
 					<MdKeyboardArrowLeft />
 				</button>
 				<div className={style.subsl1flex}>
@@ -89,13 +84,8 @@ const Slider = () => {
 						</div>
 					))}
 				</div>
-				<button
-					onClick={increasecount}
-					disabled={count === 1}
-					className={style.showbtn}
-				>
+				<button onClick={toggleCount} className={style.showbtn}>
 					<MdKeyboardArrowRight />
-					{/* MdKeyboardArrowRight,MdKeyboardArrowLeft */}
 				</button>
 			</div>
 		</div>

@@ -1,6 +1,7 @@
 import React from "react";
-import { Flex, Image, Button, Text, Box, Link } from "@chakra-ui/react";
+import { Flex, Image, Button, Text, Box} from "@chakra-ui/react";
 import Slider from "./Slider";
+import { Link as RouterLink } from "react-router-dom";
 
 const FlexiblePlans = () => {
 	return (
@@ -76,11 +77,11 @@ const FlexiblePlans = () => {
 			<Text my="30px" style={{ color: "teal" }} fontWeight="500">
 				Shipping and tax added at checkout
 			</Text>
-			<Link href="http://localhost:3000/signup">
+			<RouterLink color="green.800" to="/signup">
 				<Button colorScheme="messenger" variant="solid" borderRadius="0">
 					Sign Up Now
 				</Button>
-			</Link>
+			</RouterLink>
 			<Text fontSize="45px" fontWeight="700" mt="70px" mb="40px">
 				What Others Are Saying
 			</Text>

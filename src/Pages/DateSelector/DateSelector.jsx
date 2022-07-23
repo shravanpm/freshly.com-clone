@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getDate, postDate } from "../../Redux/DateSelectorReducer/action";
 import { Faq } from "../../Components/Faq";
 import NavbarSecond from "../../Components/NavbarSecond";
+import { useNavigate } from "react-router-dom";
 function DateSelector() {
   const DateSelector = useSelector((state) => state.dateReducer.date);
   const dispatch = useDispatch();
@@ -17,7 +18,7 @@ function DateSelector() {
     dispatch(postDate(date));
    
   }
-
+  const navigate = useNavigate();
 
   return (
     <div>
@@ -71,6 +72,7 @@ function DateSelector() {
           size="md"
           mt="2rem"
           mb={"2rem"}
+          onClick={()=>{navigate("/cart")}}
         >
           Next
         </Button>
@@ -99,6 +101,7 @@ const DateBorder = styled.div`
   &:hover {
    margin: 0.5%;
    font-weight:500;
+   border-left: 7px solid blue;
   }
    
 

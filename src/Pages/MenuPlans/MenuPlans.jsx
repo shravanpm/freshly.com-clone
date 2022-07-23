@@ -54,7 +54,7 @@ export const MenuPlans = () => {
 
       {/* ---------------------------------- Banner ----------------------------------- */}
       <Center w="60%" m="auto">
-        <Stack mt="80px">
+        <Stack mt="80px" mb="40px">
           <Center>
             <Image
               src="https://assets-global.website-files.com/5d03b4e130118314af624b20/6192ce7669f68694a8b969af_Group%20(8).svg"
@@ -81,7 +81,7 @@ export const MenuPlans = () => {
             // p="35px"
             w="230px"
           ></Box>
-          <Heading mt="10px" color={"rgb(53,116,113)"}>
+          <Heading mt="10px" fontSize={"30px"} color={"rgb(53,116,113)"}>
             {`4-5 Meals`}
           </Heading>
         </Box>
@@ -106,7 +106,7 @@ export const MenuPlans = () => {
               Save up to $12
             </Tag>
           </Box>
-          <Heading mt="10px" color={"rgb(53,116,113)"}>
+          <Heading mt="10px" fontSize={"30px"} color={"rgb(53,116,113)"}>
             {`6-7 Meals`}
           </Heading>
         </Box>
@@ -131,7 +131,7 @@ export const MenuPlans = () => {
               Save up to $20
             </Tag>
           </Box>
-          <Heading mt="10px" color={"rgb(53,116,113)"}>
+          <Heading mt="10px" fontSize={"30px"} color={"rgb(53,116,113)"}>
             {`8-9 Meals`}
           </Heading>
         </Box>
@@ -156,7 +156,7 @@ export const MenuPlans = () => {
               Save up to $27
             </Tag>
           </Box>
-          <Heading mt="10px" color={"rgb(53,116,113)"}>
+          <Heading mt="10px" fontSize={"30px"} color={"rgb(53,116,113)"}>
             {`10-11 Meals`}
           </Heading>
         </Box>
@@ -181,7 +181,7 @@ export const MenuPlans = () => {
               Save up to $33
             </Tag>
           </Box>
-          <Heading mt="10px" color={"rgb(53,116,113)"}>
+          <Heading mt="10px" fontSize={"30px"} color={"rgb(53,116,113)"}>
             {`12 Meals`}
           </Heading>
         </Box>
@@ -192,13 +192,13 @@ export const MenuPlans = () => {
             Shipping and tax added at checkout
           </Text>
         </Center>
-        <Box m="20px 0px">
-          <Center m="50px 0px">
+        <Box mt="1px">
+          <Center m="20px 0px">
             <Box
               backgroundColor={"rgb(49,103,255)"}
               color="white"
               p="10px 20px"
-              fontSize={"28"}
+              fontSize={"22"}
             >
               Get Started
             </Box>
@@ -206,7 +206,7 @@ export const MenuPlans = () => {
         </Box>
       </Stack>
       {/* ---------------------------------- On the menu block ---------------------------------- */}
-      <Box>
+      <Box mt="15px">
         <Center w="60%" m="auto">
           <Stack>
             <Box>

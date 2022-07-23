@@ -5,7 +5,6 @@ import {
 	Center,
 	HStack,
 	Button,
-	Link,
 	Modal,
 	ModalOverlay,
 	ModalContent,
@@ -53,19 +52,25 @@ const Navbar = () => {
 			{/* Middle menu */}
 			<Center>
 				<HStack gap={{ sm: "5px", md: "10px", lg: "20px" }}>
-					<Link className={`${styles.linksHome} ${styles.hide}`}>
+					<RouterLink
+						to="/plansandmenus"
+						className={`${styles.linksHome} ${styles.hide}`}
+					>
 						Plans & Menu
-					</Link>
-					<Link className={`${styles.linksHome} ${styles.hide}`}>
+					</RouterLink>
+					<RouterLink to="/" className={`${styles.linksHome} ${styles.hide}`}>
 						How it Works
-					</Link>
-					<Link className={`${styles.linksHome} ${styles.hide}`}>Gifts</Link>
-					<Link
+					</RouterLink>
+					<RouterLink to="/" className={`${styles.linksHome} ${styles.hide}`}>
+						Gifts
+					</RouterLink>
+					<RouterLink
+						to="/"
 						className={`${styles.linksHome} ${styles.hide}`}
 						onClick={onOpen}
 					>
 						Refer a Friend
-					</Link>
+					</RouterLink>
 
 					{/* ***************************************************** */}
 
@@ -189,12 +194,13 @@ const Navbar = () => {
 					</Modal>
 
 					{/* ************************************************ */}
-					<Link
+					<RouterLink
+						to="/help"
 						href="http://localhost:3000/help"
 						className={`${styles.linksHome} ${styles.hide}`}
 					>
 						Help
-					</Link>
+					</RouterLink>
 				</HStack>
 			</Center>
 
@@ -202,7 +208,7 @@ const Navbar = () => {
 			{/* Buttons */}
 			<Center>
 				<HStack>
-					<Link href="http://localhost:3000/login">
+					<RouterLink to="/login">
 						<Button
 							colorScheme="black"
 							variant="ghost"
@@ -211,8 +217,8 @@ const Navbar = () => {
 						>
 							Login
 						</Button>
-					</Link>
-					<Link href="http://localhost:3000/signup">
+					</RouterLink>
+					<RouterLink to="/signup">
 						<Button
 							size={{ sm: "xs", md: "md", lg: "lg" }}
 							className={`${styles.hide}`}
@@ -222,19 +228,11 @@ const Navbar = () => {
 						>
 							Sign Up
 						</Button>
-					</Link>
+					</RouterLink>
 				</HStack>
 			</Center>
-
-
-      {/* <Center>
-				<GiHamburgerMenu
-					className={styles.HamburgerIcon}
-					onClick={handleIconClick}
-				/>
-			</Center> */}
-    </Flex>
-  );
+		</Flex>
+	);
 };
 
 export default Navbar;
