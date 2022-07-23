@@ -14,6 +14,7 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { Register } from "../../Redux/AuthReducer/action";
 import { REGISTER_SUCCESS } from "../../Redux/AuthReducer/actionTypes";
+import { Faq } from "../../Components/Faq";
 
 const initState = {
   name: "freshly",
@@ -64,10 +65,10 @@ export const SignUp = () => {
       <SignUpWrapper>
         <SignUpBox>
           <Box>
-            <Heading size={"3xl"}>Dinner’s ready!</Heading>
+            <Heading  size={"3xl"}>Dinner’s ready!</Heading>
           </Box>
           <Box>
-            <Heading>Chef-prepared, healthy meals delivered weekly</Heading>
+            <Heading >Chef-prepared, healthy meals delivered weekly</Heading>
           </Box>
           <form style={{ display: "flex", gap: "20px", padding: "3%" }}>
             <Input
@@ -103,7 +104,7 @@ export const SignUp = () => {
             <Flex>
               <Text>Already have an account?</Text>
               <Text color={"blue"}>
-                <Link to="#">Login</Link>
+                <Link to="/login">Login</Link>
               </Text>
             </Flex>
             <Flex>
@@ -115,6 +116,7 @@ export const SignUp = () => {
           </Stack>
         </SignUpBox>
       </SignUpWrapper>
+      <Faq/>
     </>
   );
 };
@@ -131,11 +133,11 @@ const SignUpWrapper = styled.div`
 const SignUpBox = styled.div`
   width: 50%;
   height: fit-content;
-  border: 1px solid red;
   background-color: white;
   opacity: 0.8;
   margin: auto;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  padding:3%;
 `;
