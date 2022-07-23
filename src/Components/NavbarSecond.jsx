@@ -31,7 +31,7 @@ function NavbarSecond() {
 				</div>
 				<div>
 					<RouteWrapper style={{ paddingTop: "10px" }}>
-					{/* {id === "/checkout" ?   {}:{}} */}
+						{/* {id === "/checkout" ?   {}:{}} */}
 
 						{id === "/deliverydate" ? <div style={{ display: "flex" }}>
 							<Link to="/plans" style={{
@@ -58,93 +58,93 @@ function NavbarSecond() {
 							<div>Checkout</div>
 
 						</div>
-							: id === "/plans" ? 
-							<div style={{ display: "flex" }}>
-								<div>Plans</div>
-								<div style={{ padding: "5px 8px " }}>
-									<Icon as={TbChevronRight} />
-								</div>
-								<div>Date</div>
+							: id === "/plans" ?
+								<div style={{ display: "flex" }}>
+									<div>Plans</div>
+									<div style={{ padding: "5px 8px " }}>
+										<Icon as={TbChevronRight} />
+									</div>
+									<div>Date</div>
 
-								<div style={{ padding: "5px 8px " }}>
-									<Icon as={TbChevronRight} />
-								</div>
+									<div style={{ padding: "5px 8px " }}>
+										<Icon as={TbChevronRight} />
+									</div>
 
-								<div>Meals</div>
+									<div>Meals</div>
 
-								<div style={{ padding: "5px 8px " }}>
-									<Icon as={TbChevronRight} />
-								</div>
+									<div style={{ padding: "5px 8px " }}>
+										<Icon as={TbChevronRight} />
+									</div>
 
-								<div>Checkout</div>
+									<div>Checkout</div>
 
-							</div>
-							
-					
-
-
-
-
-						: id === "/checkout" ?
-
-							<div style={{ display: "flex" }}>
-
-
-
-
-								<Link to="/plans" style={{
-									textDecoration: "underline",
-									color: "blue",
-								}}>Plans</Link>
-
-								<div style={{ padding: "5px 8px " }}>
-									<Icon as={TbChevronRight} />
 								</div>
 
 
 
-								<Link to="/deliverydate" style={{
-									textDecoration: "underline",
-									color: "blue",
-								}}>Date</Link>
 
-								<div style={{ padding: "5px 8px " }}>
-									<Icon as={TbChevronRight} />
-								</div>
 
-								<Link to="/plansandmenus" style={{
-									textDecoration: "underline",
-									color: "blue",
-								}}>Meals</Link>
 
-								<div style={{ padding: "5px 8px " }}>
-									<Icon as={TbChevronRight} />
-								</div>
-								<div>Checkout</div>
+								: id === "/checkout" ?
 
-							</div>
+									<div style={{ display: "flex" }}>
 
-							:
-							<div style={{ display: "flex" }}>
-								<div>Plans</div>
-								<div style={{ padding: "5px 8px " }}>
-									<Icon as={TbChevronRight} />
-								</div>
-								<div>Date</div>
 
-								<div style={{ padding: "5px 8px " }}>
-									<Icon as={TbChevronRight} />
-								</div>
 
-								<div>Meals</div>
 
-								<div style={{ padding: "5px 8px " }}>
-									<Icon as={TbChevronRight} />
-								</div>
+										<Link to="/plans" style={{
+											textDecoration: "underline",
+											color: "blue",
+										}}>Plans</Link>
 
-								<div>Checkout</div>
+										<div style={{ padding: "5px 8px " }}>
+											<Icon as={TbChevronRight} />
+										</div>
 
-							</div>
+
+
+										<Link to="/deliverydate" style={{
+											textDecoration: "underline",
+											color: "blue",
+										}}>Date</Link>
+
+										<div style={{ padding: "5px 8px " }}>
+											<Icon as={TbChevronRight} />
+										</div>
+
+										<Link to="/plansandmenus" style={{
+											textDecoration: "underline",
+											color: "blue",
+										}}>Meals</Link>
+
+										<div style={{ padding: "5px 8px " }}>
+											<Icon as={TbChevronRight} />
+										</div>
+										<div>Checkout</div>
+
+									</div>
+
+									:
+									<div style={{ display: "flex" }}>
+										<div>Plans</div>
+										<div style={{ padding: "5px 8px " }}>
+											<Icon as={TbChevronRight} />
+										</div>
+										<div>Date</div>
+
+										<div style={{ padding: "5px 8px " }}>
+											<Icon as={TbChevronRight} />
+										</div>
+
+										<div>Meals</div>
+
+										<div style={{ padding: "5px 8px " }}>
+											<Icon as={TbChevronRight} />
+										</div>
+
+										<div>Checkout</div>
+
+									</div>
 						}
 
 
