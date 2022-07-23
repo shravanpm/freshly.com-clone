@@ -101,6 +101,7 @@ const DateBorder = styled.div`
   &:hover {
    margin: 0.5%;
    font-weight:500;
+   border-left: 7px solid blue;
   }
    
 
