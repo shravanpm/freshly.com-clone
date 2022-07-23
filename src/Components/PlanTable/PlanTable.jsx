@@ -29,9 +29,9 @@ const PlanTable = () => {
                             {foodPlans.map(plan => {
                                 return <th key={plan.id} style={{ padding: "0px" }} >
                                     <PlanTableContainer2 >
-                                        <div style={{ fontSize: "0.8em", fontWeight: "500" }}>{`${plan.title} meals`}</div>
+                                        <div style={{ fontSize: "1em", fontWeight: "500"}}>{`${plan.title} meals`}</div>
                                         <div style={{
-                                            fontSize: '0.5em',
+                                            fontSize: '0.7em',
                                             fontWeight: '400',
                                         }}>{`${plan.pricePerMeal} / meal`}</div>
                                     </ PlanTableContainer2 >
