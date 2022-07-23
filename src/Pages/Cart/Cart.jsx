@@ -12,16 +12,20 @@ import {
   SimpleGrid,
   Icon,
   CircularProgress,
+  Select,
 } from "@chakra-ui/react";
 
 import Card from "../../Components/Cart/Card";
 import axios from "axios";
-import { useSearchParams } from "react-router-dom";
+import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
 import { clearCart, getData } from "../../Redux/AppReducer/action";
 import { useDispatch, useSelector } from "react-redux";
 import { Sidebar } from "../../Components/Cart/Sidebar";
 import CartBox from "../../Components/Cart/CartBox";
 import { CgShoppingCart } from "react-icons/cg";
+import CustomerSupport from "../../Components/CustomerSupport";
+import { ChevronLeftIcon } from "@chakra-ui/icons";
+import { getDate } from "../../Redux/DateSelectorReducer/action";
 
 function Cart() {
   const [sidebarVisible, toggleSidebar] = useState(false);
@@ -29,7 +33,8 @@ function Cart() {
 
   const data = useSelector((state) => state.appReducer.data);
   const loading = useSelector((state) => state.appReducer.isLoading);
-  console.log(loading);
+
+  const navigate = useNavigate();
 
   const dispatch = useDispatch();
   const urlcategory = searchParams.get("category");
@@ -40,17 +45,39 @@ function Cart() {
   const [sortBy, setSortBy] = useState(urlSortBy || "");
 
   const [diet, setDeit] = useState([]);
+
   const [cartTotal, setCartTotal] = useState({
     regTotal: 0,
     currentTotal: 0,
   });
+
+  const dates = [
+    { date: " Monday, Jul 25", id: 1 },
+    { date: " Tuesday, Jul 26", id: 2 },
+    { date: " Wednesday, Jul 27", id: 3 },
+    { date: " Thursday, Jul 28", id: 4 },
+    { date: " Friday, Jul 29", id: 5 },
+    { date: " Saturday, Jul 30", id: 6 },
+    { date: " Sunday, Jul 31", id: 7 },
+    { date: " Monday, Aug 1", id: 8 },
+    { date: " Tuesday, Aug 2", id: 9 },
+    { date: " Wednesday, Aug 3", id: 10 },
+    { date: " Thursday, Aug 4", id: 11 },
+    { date: " Friday, Aug 5", id: 12 },
+    { date: " Saturday, Aug 6", id: 13 },
+    { date: " Sunday, Aug 7", id: 14 },
+    { date: " Monday, Aug 8", id: 15 },
+    { date: " Tuesday, Aug 9", id: 16 },
+  ];
+  const [selectedDeliveryDate, setSelectedDeliveryDate] = useState(
+    dates[0].date || ""
+  );
 
   const cartData = useSelector((state) => state.appReducer.cart);
   const foods = data.filter((food) => {
     if (diet.length === 0) {
       return food;
     } else {
-      let foodData = [];
       for (let i = 0; i < diet.length; i++) {
         if (food[diet[i]]) {
           return food;
@@ -60,14 +87,21 @@ function Cart() {
   });
 
   const clearCartFn = () => {
+    //clear all products in cart
     dispatch(clearCart());
   };
 
+  const handleGoToPrePage = () => {
+    navigate("/deliverydate");
+  };
+
   const handleSidebarToggle = () => {
+    // sidebar will be show and hide function
     toggleSidebar(!sidebarVisible);
   };
 
   const handlePriceChange = (p) => {
+    //  Product total will be calculated w.r.t number of products in cart
     if (p < 6) {
       setCartTotal({
         ...cartTotal,
@@ -101,11 +135,18 @@ function Cart() {
     }
   };
 
+  const handleSelectedDeliveryDate = (e) => {
+    setSelectedDeliveryDate(e.target.value);
+  };
+  const handleGoToCheckOut = () => {
+    navigate("/checkout");
+  };
+
   const handleCheckbox = (e) => {
+    // filtering w.r.t diet and it uses redux
     const option = e.target.value;
     let newDiet = [...diet];
     if (diet.includes(option)) {
-      console.log("hello");
       newDiet.splice(newDiet.indexOf(option), 1);
     } else {
       newDiet.push(option);
@@ -114,10 +155,13 @@ function Cart() {
   };
 
   useEffect(() => {
+    //when cartData changes it triggers, calculating sum again
     handlePriceChange(cartData.length);
   }, [cartData]);
 
   useEffect(() => {
+    //filtering done by routing and json server
+
     let Category = searchParams.get("category") || category;
     if (!category) {
       Category = "";
@@ -151,23 +195,35 @@ function Cart() {
   return (
     <Flex backgroundColor={"rgb(254,253,246)"}>
       {/* Left container */}
-      <Box
-        w="75%"
-        // border={"1px solid red"}
-        h="800px"
-        p="10px"
-        mr="-10px"
-      >
-        <Flex
-          justifyContent={"space-between"}
-          // border="1px solid blue"
-          p="10px"
-          bgColor={"white"}
-        >
-          <Box>Back</Box>
-          <Box>Date</Box>
-          <Box>Customer Support</Box>
+
+      <Box w="75%" p="10px" mr="-10px">
+        {/* --------------------------------------- Navbar Starts--------------------------------- */}
+        <Flex justifyContent={"space-between"} p="10px" bgColor={"white"}>
+          <Flex cursor={"pointer"} onClick={handleGoToPrePage}>
+            <ChevronLeftIcon pt="2px" h="6" w="6" color={"blue"} />
+            <Box pt="0px" color="blue" pl="0px" variant="ghost">
+              Back
+            </Box>
+          </Flex>
+          <Box w="200px">
+            <Select
+              placeholder={selectedDeliveryDate}
+              onChange={handleSelectedDeliveryDate}
+            >
+              {dates.map((date) => {
+                if (date.date !== selectedDeliveryDate) {
+                  return <option key={date.id}>{date.date}</option>;
+                }
+              })}
+            </Select>
+          </Box>
+          <Box>
+            <CustomerSupport />
+          </Box>
         </Flex>
+        {/* --------------------------------------- Navbar Ends --------------------------------------- */}
+
+        {/* --------------------------------  choose Meals and sort bar -------------------------------- */}
         <Flex
           justifyContent={"space-between"}
           p="5px 10px"
@@ -186,8 +242,14 @@ function Cart() {
             </Button>
           </Box>
         </Flex>
+
+        {/* --------------------------------  choose Meals and sort ends -------------------------------- */}
+
+        {/* ------------------------ left box which contain products and sidebar ------------------------ */}
         <Flex>
           {/* Left Side bar */}
+
+          {/* Passing whole value from parent to child  */}
           {sidebarVisible && (
             <Sidebar
               handleCheckbox={handleCheckbox}
@@ -197,8 +259,16 @@ function Cart() {
               setSortBy={setSortBy}
             />
           )}
-          {/* Product Rendering div */}
-          <Box w={"100%"} h="80vh" overflow={"scroll"} p="20px">
+
+          {/* --------------------------------- Product Rendering div --------------------------------- */}
+
+          <Box
+            w={"100%"}
+            h="80vh"
+            overflow={"scroll"}
+            p="20px"
+            position={"sticky"}
+          >
             {loading && <CircularProgress isIndeterminate value={"50"} />}
             {!loading && (
               <SimpleGrid minChildWidth="170px" spacing={30}>
@@ -210,10 +280,20 @@ function Cart() {
           </Box>
         </Flex>
       </Box>
-      {/* Right Side Cart Box*/}
-      <Box backgroundColor="rgb(254,254,255)" w="25%" h="100vh">
+
+      {/* ----------------------------------- Left Side Box ends here ----------------------------------- */}
+
+      {/* -------------------------------- cart in right side of the page -------------------------------- */}
+
+      <Box
+        backgroundColor="rgb(254,254,255)"
+        w="25%"
+        h="80vh"
+        position="sticky"
+      >
+        {/* ---------------------  Delivery date and clear all button --------------------- */}
+
         <Flex
-          // border="1px solid blue"
           p="10px"
           pt="20px"
           bgColor={"white"}
@@ -222,7 +302,7 @@ function Cart() {
           <Flex>
             <Box>
               <Text>
-                My Delivery for: <b>Date</b>
+                My Delivery for: <b>{selectedDeliveryDate}</b>
               </Text>
             </Box>
           </Flex>
@@ -236,6 +316,9 @@ function Cart() {
             </Box>
           )}
         </Flex>
+
+        {/* ---------------------  Delivery date and clear all button --------------------- */}
+
         <Stack mt="30px" h="60vh">
           {cartData.length == 0 && (
             <Box mt="180px">
@@ -246,8 +329,11 @@ function Cart() {
           )}
           {cartData.length !== 0 && <CartBox cartTotal={cartTotal} />}
         </Stack>
-        {/* Bottom right cart button section */}
+
+        {/* Bottom right cart button section, Total sum, offer and checkout button */}
+
         <Box h="25vh">
+          {/* --------------------- Offer amount showing box --------------------- */}
           {cartData.length > 5 && (
             <Box textAlign={"left"} p="10px 0px 0px 10px">
               <Text
@@ -264,7 +350,7 @@ function Cart() {
             </Box>
           )}
 
-          {/* Subtotal final box*/}
+          {/* ------------------------- Subtotal final box ------------------------- */}
           <Flex justifyContent={"space-between"} p="5px">
             <Flex p="8px 10px 0px 0px">
               {cartData.length !== 0 && (
@@ -301,6 +387,8 @@ function Cart() {
               </Text>
             </Flex>
           </Flex>
+
+          {/* ------------------------------- Checkout button -------------------------------   */}
           <Box p="0px 10px 0px 10px" mt="10px">
             <Button
               w="100%"
@@ -310,6 +398,7 @@ function Cart() {
                   : `${cartData.length > 12 ? `gray` : "blue"}`
               }
               disabled={cartData.length < 4 || cartData.length > 12}
+              onClick={handleGoToCheckOut}
             >
               {cartData.length < 4
                 ? `Add ${4 - cartData.length} To Continue`
