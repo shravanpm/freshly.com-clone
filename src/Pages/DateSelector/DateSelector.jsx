@@ -21,9 +21,11 @@ function DateSelector() {
 
   return (
     <div>
+
       <Box style={{ position:"sticky", top:0 }}>
        <NavbarSecond passPage={2} />
       </Box> 
+
       <Box bg="#fffdf7" p={4} margin={"auto"} insetBlock={"0"}>
         <Heading
           mb={"3rem!important"}
