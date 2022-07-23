@@ -125,7 +125,26 @@ function NavbarSecond() {
 							</div>
 
 							:
-							null
+							<div style={{ display: "flex" }}>
+								<div>Plans</div>
+								<div style={{ padding: "5px 8px " }}>
+									<Icon as={TbChevronRight} />
+								</div>
+								<div>Date</div>
+
+								<div style={{ padding: "5px 8px " }}>
+									<Icon as={TbChevronRight} />
+								</div>
+
+								<div>Meals</div>
+
+								<div style={{ padding: "5px 8px " }}>
+									<Icon as={TbChevronRight} />
+								</div>
+
+								<div>Checkout</div>
+
+							</div>
 						}
 
 
