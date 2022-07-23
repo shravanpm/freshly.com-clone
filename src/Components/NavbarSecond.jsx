@@ -9,8 +9,13 @@ import { Link, useParams } from "react-router-dom";
 import { Link as RouterLink } from "react-router-dom";
 
 function NavbarSecond() {
-const {id} = useParams();
-// console.log(id);
+const id = window.location.pathname
+console.log(id)
+
+
+
+
+
 	return (
 		<div>
 			<NavebarWrapper>
@@ -26,21 +31,48 @@ const {id} = useParams();
 				</div>
 				<div>
 					<RouteWrapper style={{ paddingTop: "10px" }}>
-						<div> Plans</div>
+					
+						
 
+						
+						{id==="/deliverydate" ? <Link to="/plans" style={{
+							textDecoration: "underline",
+							color: "blue",
+						}}>Plans</Link> : <div >Plans</div>}
 						<div style={{ padding: "5px 8px " }}>
 							<Icon as={TbChevronRight} />
 						</div>
-						<div>Day</div>
-						<div style={{ padding: "5px 8px " }}>
-							<Icon as={TbChevronRight} />
-						</div>
-						<div>Meals</div>
 
+					   
+
+					
+						{id==="/checkout" ? <div>
+
+						<Link to="/deliverydate" style={{textDecoration: "underline",
+						color: "blue",
+						}}>Date</Link> 
 						<div style={{ padding: "5px 8px " }}>
 							<Icon as={TbChevronRight} />
 						</div>
-						<div>Checkout</div>
+
+						<Link to="/plansandmenus" style={{textDecoration: "underline",
+						color: "blue",
+						}}>Meals</Link>
+						<div style={{ padding: "5px 8px " }}>
+							<Icon as={TbChevronRight} />
+						</div>
+						</div> : <div >
+							<div>Date</div>
+							<div style={{ padding: "5px 8px " }}>
+							<Icon as={TbChevronRight} />
+						</div>
+							<div>Meals</div>
+							<div style={{ padding: "5px 8px " }}>
+							<Icon as={TbChevronRight} />
+						</div>
+
+							</div>}
+						{/* <div>Checkout</div> */}
 					</RouteWrapper>
 				</div>
 

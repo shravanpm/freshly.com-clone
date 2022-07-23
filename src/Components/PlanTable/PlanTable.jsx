@@ -5,7 +5,6 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
 import { getPlans } from '../../Redux/PlansReducer/action'
 import styled from 'styled-components';
-import { Icon } from '@chakra-ui/react';
 import { StarIcon } from '@chakra-ui/icons';
 
 const PlanTable = () => {
