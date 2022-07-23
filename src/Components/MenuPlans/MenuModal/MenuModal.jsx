@@ -13,14 +13,14 @@ import {
 } from "@chakra-ui/react";
 import { useDispatch } from "react-redux";
 
-import { CartModalTitle } from "./Components/ModalTitle";
-import { CartModalDesc } from "./Components/ModalDesc";
+import { MenuModalTitle } from "./Components/ModalTitle";
+import { MenuModalDesc } from "./Components/ModalDesc";
 
-import CartModalIngredient from "./Components/ModalIngredients";
+import { MenuModalIngredient } from "./Components/ModalIngredients";
 import ModalNutrition from "./Components/ModalNutrition";
 import { addToCart } from "../../../Redux/AppReducer/action";
 
-export const CartModal = ({ data }) => {
+export const MenuModal = ({ data }) => {
   const dispatch = useDispatch();
   const handleAdd = (payload) => {
     dispatch(addToCart(payload));
@@ -38,7 +38,7 @@ export const CartModal = ({ data }) => {
           <ModalCloseButton />
         </Box>
         <Flex justifyContent={"space-between"}>
-          <CartModalTitle data={data} />
+          <MenuModalTitle data={data} />
         </Flex>
       </Box>
 
@@ -63,11 +63,11 @@ export const CartModal = ({ data }) => {
 
           <Box w="52%" ml="1px" mt="15px">
             <Box>
-              <CartModalDesc data={data} />
+              <MenuModalDesc data={data} />
             </Box>
             {/* Ingredients Starting */}
             <Box>
-              <CartModalIngredient data={data} mt="10px" />
+              <MenuModalIngredient data={data} mt="10px" />
             </Box>
             {/* Ingredients ends */}
             {/* nutrition */}
