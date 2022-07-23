@@ -15,7 +15,7 @@ const reducer = (state = initialState, action) => {
                 isError: false
             }
         case types.GET_PLANS_SUCCESS:
-            console.log("GET_PLANS_SUCCESS");
+           
             return {
                 ...state,
                 plans: payload,

@@ -31,7 +31,7 @@ export const Login = () => {
 			};
 			dispatch(login(params)).then((r) => {
 				if (r === LOGIN_SUCCESS) {
-					console.log("logindone", email);
+					// console.log("logindone", email);
 					navigate("/plans");
 				}
 			});

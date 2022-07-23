@@ -13,6 +13,7 @@ import {
   Checkbox,
   //  CheckboxGroup
 } from "@chakra-ui/react";
+import NavbarSecond from "../NavbarSecond";
 export const Checkout = () => {
   const [input, setInput] = useState("");
   const [address1, setAddress1] = useState("");
@@ -26,6 +27,8 @@ export const Checkout = () => {
 
   const isError = input === "";
   return (
+    <div>
+      <NavbarSecond/>
     <div className="Main">
       <div className="Body">
         <div className="div1">
@@ -165,5 +168,7 @@ export const Checkout = () => {
         
       </div>
     </div>
+    </div>
+    
   );
 };
