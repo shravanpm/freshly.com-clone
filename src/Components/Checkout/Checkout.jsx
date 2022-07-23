@@ -8,12 +8,19 @@ import {
   Input,
   Select,
   Stack,
+  Button,
   // InputLeftAddon,
   Checkbox,
   //  CheckboxGroup
 } from "@chakra-ui/react";
 export const Checkout = () => {
   const [input, setInput] = useState("");
+  const [address1, setAddress1] = useState("");
+  const [address, setAddress] = useState("");
+  const [phone, setPhone] = useState("");
+  const [email, setEmail] = useState("");
+  const [fname, setFname] = useState("");
+  const [lname, setLname] = useState("");
 
   const handleInputChange = (e) => setInput(e.target.value);
 
@@ -22,65 +29,31 @@ export const Checkout = () => {
     <div className="Main">
       <div className="Body">
         <div className="div1">
-          <FormControl isInvalid={isError}>
+          <FormControl>
             <div className="name">
               <div>
                 <FormLabel>First Name</FormLabel>
-                <Input
-                  type="email"
-                  value={input}
-                  onChange={handleInputChange}
-                />
-                {!isError ? (
-                  <FormHelperText>
-                    Enter the email you'd like to receive the newsletter on.
-                  </FormHelperText>
-                ) : (
-                  <FormErrorMessage>can't be empty</FormErrorMessage>
-                )}
+                <Input type="text"  id="inp"/>
               </div>
               <div>
                 <FormLabel>Last Name</FormLabel>
-                <Input
-                  type="email"
-                  value={input}
-                  onChange={handleInputChange}
-                />
-                {/* {!isError ? (
-                  <FormHelperText>
-                    Enter the email you'd like to receive the newsletter on.
-                  </FormHelperText>
-                ) : (
-                  <FormErrorMessage>can't be empty</FormErrorMessage>
-                )} */}
+                <Input type="text"  id="inp"/>
+                
               </div>
             </div>
             <div className="address">
               <FormLabel>Address Line 1</FormLabel>
-              <Input type="email" value={input} onChange={handleInputChange} />
-              {!isError ? (
-                <FormHelperText>
-                  Enter the email you'd like to receive the newsletter on.
-                </FormHelperText>
-              ) : (
-                <FormErrorMessage>can't be empty</FormErrorMessage>
-              )}
+              <Input type="text"  id="inp"/>
             </div>
             <div className="address">
               <FormLabel>Address Line 2(optional)</FormLabel>
-              <Input type="email" value={input} onChange={handleInputChange} />
-              {/* {!isError ? (
-                  // <FormHelperText>
-                  //   Enter the email you'd like to receive the newsletter on.
-                  // </FormHelperText>
-                ) : (
-                  // <FormErrorMessage>can't be empty</FormErrorMessage>
-                )} */}
+              <Input type="text"  id="inp"/>
+             
             </div>
             <div className="Zip">
               <div>
                 <FormLabel>City</FormLabel>
-                <Input placeholder="First name" />
+                <Input type="text"  id="inp"/>
               </div>
 
               <div>
@@ -94,34 +67,16 @@ export const Checkout = () => {
               </div>
               <div>
                 <FormLabel>Zip</FormLabel>
-                <Input placeholder="First name" />
+                <Input type="text"  id="inp"/>
               </div>
             </div>
             <div className="address">
               <FormLabel>Phone</FormLabel>
-              {/* <InputLeftAddon children='+91' /> */}
-              <Input
-                type="tel"
-                min={10}
-                value={input}
-                onChange={handleInputChange}
-              />
-              {!isError ? (
-                <FormHelperText>
-                  phone should you'd like to receive the newsletter on.
-                </FormHelperText>
-              ) : (
-                <FormErrorMessage>
-                  Is not a valid phone number. Please enter a 10-digit phone
-                  number.
-                </FormErrorMessage>
-              )}
+              <Input type="text"  id="inp"/>
             </div>
             <div id="checkbox">
               <Stack spacing={5} direction="row">
-                {/* <Checkbox colorScheme="green" defaultChecked>
-                  Receive SMS text message updates on my orders
-                </Checkbox> */}
+      
               </Stack>
             </div>
             <div className="address">
@@ -129,15 +84,9 @@ export const Checkout = () => {
                 Email (We require your email to send you receipts and order
                 updates)
               </FormLabel>
-              <Input type="email" value={input} onChange={handleInputChange} />
-              {!isError ? (
-                <FormHelperText>
-                  Enter the email you'd like to receive the newsletter on.
-                </FormHelperText>
-              ) : (
-                <FormErrorMessage>can't be empty</FormErrorMessage>
-              )}
+              <Input type="text"  id="inp"/>
             </div>
+            <Button colorScheme='blue' className="btn" >Procced to Payment </Button>
           </FormControl>
         </div>
        
