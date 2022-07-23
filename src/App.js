@@ -1,6 +1,7 @@
 import "./App.css";
 
 import AllRoutes from "./Components/AllRoutes";
+import { LoginNav } from "./Components/LoginNav";
 
 // import NavbarSecond from "./Components/NavbarSecond";
 
@@ -11,12 +12,12 @@ function App() {
   return (
     <div className="App">
 
-      {/* <AllRoutes /> */}
+      <AllRoutes />
       {/* <NavbarSecond/> */}
-      <DateSelector />
+      {/* <DateSelector /> */}
       {/* <Cart /> */}
       {/* <Plans /> */}
-
+     
     </div>
   );
 }
