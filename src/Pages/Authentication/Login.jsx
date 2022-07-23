@@ -12,6 +12,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { login } from "../../Redux/AuthReducer/action";
 import { LOGIN_SUCCESS } from "../../Redux/AuthReducer/actionTypes";
+import { Footer } from "../../Components/Footer";
 
 export const Login = () => {
   const [email, setEmail] = useState("");
@@ -44,7 +45,8 @@ export const Login = () => {
         align="center"
         w={"30%"}
         h={"30rem"}
-        m={"10rem auto"}
+        m={"5rem auto"}
+        p={2}
         bg="whiteAlpha.900"
       >
         <Heading fontSize={"4rem"}>Log In</Heading>
@@ -91,6 +93,7 @@ export const Login = () => {
           </Flex>
         </Flex>
       </Flex>
+      <Footer/>
     </>
   );
 };

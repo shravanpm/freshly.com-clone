@@ -14,6 +14,7 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { Register } from "../../Redux/AuthReducer/action";
 import { REGISTER_SUCCESS } from "../../Redux/AuthReducer/actionTypes";
+import { Faq } from "../../Components/Faq";
 
 const initState = {
   name: "freshly",
@@ -115,6 +116,7 @@ export const SignUp = () => {
           </Stack>
         </SignUpBox>
       </SignUpWrapper>
+      <Faq/>
     </>
   );
 };
