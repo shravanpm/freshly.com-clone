@@ -71,7 +71,7 @@ export const MenuPlans = () => {
       </Center>
 
       {/*------------------------------------- Plans Block -------------------------------------*/}
-      <HStack w="90%" m="auto" mt="50px">
+      <SimpleGrid columns={[1, 2, 5]} gap="10px" w="95%" mt="50px" m="auto">
         <Box>
           <Box
             backgroundImage="url('https://assets-global.website-files.com/5d03b4e130118314af624b20/6192cc9d75bbb20e8074e602_Rectangle%20108.jpg')"
@@ -185,7 +185,7 @@ export const MenuPlans = () => {
             {`12 Meals`}
           </Heading>
         </Box>
-      </HStack>
+      </SimpleGrid>
       <Stack mt="20px">
         <Center>
           <Text color="rgb(53,116,121)" fontWeight={"semibold"}>
