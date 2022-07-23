@@ -5,16 +5,12 @@ import { GrCircleQuestion } from "react-icons/gr";
 import { TiArrowSortedDown } from "react-icons/ti";
 import styled from "styled-components";
 import CustomerSupport from "./CustomerSupport";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { Link as RouterLink } from "react-router-dom";
 
 function NavbarSecond() {
-	const [isOpen, setIsOpen] = React.useState([
-		"Plans",
-		"Day",
-		"Meals",
-		"Checkout",
-	]);
+const {id} = useParams();
+// console.log(id);
 	return (
 		<div>
 			<NavebarWrapper>

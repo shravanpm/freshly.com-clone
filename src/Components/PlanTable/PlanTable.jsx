@@ -19,7 +19,7 @@ const PlanTable = () => {
     }
         , [])
 
-    console.log(foodPlans)
+ 
 
     return (
 
@@ -43,8 +43,7 @@ const PlanTable = () => {
                         <tr >
                             {foodPlans.map(plan => {
 
-                                return <th key={plan.id} onClick={() => { console.log(plan.id) }}
-                                   style={  plan.id===3 ? { backgroundColor:"#b6f0dd", padding: "0px"} : {padding: "0px"} }>
+                                return <th key={plan.id} style={  plan.id===3 ? { backgroundColor:"#b6f0dd", padding: "0px"} : {padding: "0px"} }>
                                     <PlanTableContainer2 >
                                         <div style={{ fontSize: "1em", fontWeight: "500"}}>{`${plan.title} meals`}</div>
                                         <div style={{
