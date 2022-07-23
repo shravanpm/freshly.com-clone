@@ -8,9 +8,11 @@ import NavbarSecond from '../../Components/NavbarSecond'
 function Plans() {
     return (
         <div margin="auto">
-            <Box>
-                <NavbarSecond />
-            </Box>
+
+          <Box style={{ position:"sticky", top:0 }}>
+       <NavbarSecond  />
+      </Box> 
+
           
 
             <Box bg="#fffdf7" p={4} margin={'auto'} insetBlock={'0'}>

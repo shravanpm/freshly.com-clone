@@ -1,0 +1,16 @@
+.box img{
+    object-fit: contain;
+}
+.zoom {
+    /* padding: 50px; */
+    /* background-color: green; */
+    transition: transform .2s; /* Animation */
+    /* width: 550px; */
+    /* height: 250px; */
+    margin: 0 auto;
+    cursor: pointer;
+  }
+
+  .zoom:hover{
+    transform: scale(1.1);
+  }
