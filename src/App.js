@@ -7,12 +7,11 @@ import { Plans } from "./Pages/Plans/plans";
 function App() {
   return (
     <div className="App">
-      {/* <AllRoutes /> */}
-       {/* <NavbarSecond/> */}
+      <AllRoutes />
+      {/* <NavbarSecond/> */}
       {/* <DateSelector /> */}
       {/* <Cart /> */}
-      <Plans />
-     
+      {/* <Plans /> */}
     </div>
   );
 }
