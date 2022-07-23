@@ -13,7 +13,7 @@ export const LoginNav = () => {
           justify="space-between"
           alignItems={"center"}
           boxShadow={"base"}
-          fontSize={"1.5rem"}
+          fontSize={"1rem"}
           color='gray.700'
         >
           <Flex flex={1} justify="space-between">
