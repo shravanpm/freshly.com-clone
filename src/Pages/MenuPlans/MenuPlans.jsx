@@ -15,7 +15,7 @@ import {
 import Navbar from "../../Components/LandingPage/components/Navbar";
 import { CommonQstns } from "../../Components/MenuPlans/CommonQstns";
 import { Footer } from "../../Components/Footer";
-import { useSearchParams } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { getData } from "../../Redux/AppReducer/action";
 import { useDispatch, useSelector } from "react-redux";
 import { MenuCard } from "../../Components/MenuPlans/MenuCard";
@@ -30,6 +30,7 @@ export const MenuPlans = () => {
     setCategory(value);
   };
   const data = useSelector((state) => state.appReducer.data);
+  const navigate = useNavigate();
 
   useEffect(() => {
     let Category = searchParams.get("category") || category;
@@ -77,8 +78,11 @@ export const MenuPlans = () => {
             backgroundImage="url('https://assets-global.website-files.com/5d03b4e130118314af624b20/6192cc9d75bbb20e8074e602_Rectangle%20108.jpg')"
             h="150px"
             backgroundSize="cover"
+            onClick={() => {
+              navigate("/deliverydate");
+            }}
             borderRadius={"20px"}
-            // p="35px"
+            cursor="pointer"
             w="230px"
           ></Box>
           <Heading mt="10px" fontSize={"30px"} color={"rgb(53,116,113)"}>
@@ -92,7 +96,10 @@ export const MenuPlans = () => {
             h="150px"
             backgroundSize="cover"
             borderRadius={"20px"}
-            // p="35px"
+            onClick={() => {
+              navigate("/deliverydate");
+            }}
+            cursor="pointer"
             w="230px"
           >
             <Tag
@@ -117,7 +124,10 @@ export const MenuPlans = () => {
             h="150px"
             backgroundSize="cover"
             borderRadius={"20px"}
-            // p="35px"
+            cursor="pointer"
+            onClick={() => {
+              navigate("/deliverydate");
+            }}
             w="230px"
           >
             <Tag
@@ -142,7 +152,10 @@ export const MenuPlans = () => {
             h="150px"
             backgroundSize="cover"
             borderRadius={"20px"}
-            // p="35px"
+            onClick={() => {
+              navigate("/deliverydate");
+            }}
+            cursor="pointer"
             w="230px"
           >
             <Tag
@@ -167,7 +180,10 @@ export const MenuPlans = () => {
             h="150px"
             backgroundSize="cover"
             borderRadius={"20px"}
-            // p="35px"
+            onClick={() => {
+              navigate("/deliverydate");
+            }}
+            cursor="pointer"
             w="230px"
           >
             <Tag

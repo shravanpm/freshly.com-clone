@@ -16,10 +16,16 @@ import { CartModal } from "./CartModal/CartModal";
 function Card({ data }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const dispatch = useDispatch();
+  const token = useSelector((state) => state.authReducer.token);
 
-  const cartData = useSelector((state) => state.appReducer.cart);
   const handleAdd = (payload) => {
-    dispatch(addToCart(payload));
+    const payloadData = {
+      img: payload.img_2,
+      title: payload.title,
+      token: token,
+      id: payload.id,
+    };
+    dispatch(addToCart(payloadData));
   };
   return (
     <Box w="200px" h="310px">

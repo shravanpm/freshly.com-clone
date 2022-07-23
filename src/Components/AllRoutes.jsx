@@ -11,6 +11,7 @@ import { SignUp } from "../Pages/Authentication/SignUp";
 import { Checkout } from "./Checkout/Checkout";
 import Help from "./LandingPage/Pages/Help/Help";
 import SubmitARequest from "./LandingPage/Pages/SubmitARequest";
+import RequiredAuth from "./RequiredAuth";
 
 const AllRoutes = () => {
   return (
@@ -18,7 +19,14 @@ const AllRoutes = () => {
       <Route path="/" element={<HomePage />} />
       <Route path="/help" element={<Help />} />
       <Route path="/submitARequest" element={<SubmitARequest />} />
-      <Route path="/cart" element={<Cart />} />
+      <Route
+        path="/cart"
+        element={
+          <RequiredAuth>
+            <Cart />
+          </RequiredAuth>
+        }
+      />
       <Route path="/deliverydate" element={<DateSelector />} />
       <Route path="/plans" element={<Plans />} />
 

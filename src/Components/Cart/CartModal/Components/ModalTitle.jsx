@@ -7,7 +7,13 @@ import { addToCart } from "../../../../Redux/AppReducer/action";
 export const CartModalTitle = ({ data }) => {
   const dispatch = useDispatch();
   const handleAdd = (payload) => {
-    dispatch(addToCart(payload));
+    const payloadData = {
+      id: payload.id,
+      title: payload.title,
+      img: payload.img_2,
+    };
+
+    dispatch(addToCart(payloadData));
   };
   return (
     <>

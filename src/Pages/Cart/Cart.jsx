@@ -25,7 +25,7 @@ import CartBox from "../../Components/Cart/CartBox";
 import { CgShoppingCart } from "react-icons/cg";
 import CustomerSupport from "../../Components/CustomerSupport";
 import { ChevronLeftIcon } from "@chakra-ui/icons";
-import { getDate } from "../../Redux/DateSelectorReducer/action";
+import { getDate, postDate } from "../../Redux/DateSelectorReducer/action";
 
 function Cart() {
   const [sidebarVisible, toggleSidebar] = useState(false);
@@ -51,6 +51,8 @@ function Cart() {
     currentTotal: 0,
   });
 
+  const token = useSelector((state) => state.authReducer.token);
+
   const dates = [
     { date: " Monday, Jul 25", id: 1 },
     { date: " Tuesday, Jul 26", id: 2 },
@@ -69,9 +71,8 @@ function Cart() {
     { date: " Monday, Aug 8", id: 15 },
     { date: " Tuesday, Aug 9", id: 16 },
   ];
-  const [selectedDeliveryDate, setSelectedDeliveryDate] = useState(
-    dates[0].date || ""
-  );
+  const date =
+    useSelector((state) => state.dateReducer.selectedDate) || dates[0].date;
 
   const cartData = useSelector((state) => state.appReducer.cart);
   const foods = data.filter((food) => {
@@ -136,7 +137,8 @@ function Cart() {
   };
 
   const handleSelectedDeliveryDate = (e) => {
-    setSelectedDeliveryDate(e.target.value);
+    // setSelectedDeliveryDate(e.target.value);
+    dispatch(postDate(e.target.value));
   };
   const handleGoToCheckOut = () => {
     navigate("/checkout");
@@ -206,12 +208,9 @@ function Cart() {
             </Box>
           </Flex>
           <Box w="200px">
-            <Select
-              placeholder={selectedDeliveryDate}
-              onChange={handleSelectedDeliveryDate}
-            >
+            <Select placeholder={date} onChange={handleSelectedDeliveryDate}>
               {dates.map((date) => {
-                if (date.date !== selectedDeliveryDate) {
+                if (date.date !== date) {
                   return <option key={date.id}>{date.date}</option>;
                 }
               })}
@@ -300,9 +299,9 @@ function Cart() {
           justifyContent={"space-between"}
         >
           <Flex>
-            <Box>
-              <Text>
-                My Delivery for: <b>{selectedDeliveryDate}</b>
+            <Box pt="10px">
+              <Text fontSize={"13px"}>
+                My Delivery for: <b>{date}</b>
               </Text>
             </Box>
           </Flex>
