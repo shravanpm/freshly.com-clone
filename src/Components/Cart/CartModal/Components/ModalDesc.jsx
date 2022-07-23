@@ -1,16 +1,6 @@
 import React from "react";
 
-import {
-  Box,
-  Button,
-  Center,
-  Flex,
-  Heading,
-  Image,
-  SimpleGrid,
-  Stack,
-  Text,
-} from "@chakra-ui/react";
+import { Box, Stack, Text } from "@chakra-ui/react";
 
 export const CartModalDesc = ({ data }) => {
   return (

@@ -1,6 +1,5 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { AddIcon } from "@chakra-ui/icons";
 import { Box, Heading, Image, Text } from "@chakra-ui/react";
 import {
   Modal,

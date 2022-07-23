@@ -1,18 +1,6 @@
 import React from "react";
 
-import {
-  Box,
-  Button,
-  Center,
-  Flex,
-  Heading,
-  Image,
-  SimpleGrid,
-  Spacer,
-  Stack,
-  Tag,
-  Text,
-} from "@chakra-ui/react";
+import { Box, Flex, Spacer, Stack, Tag, Text } from "@chakra-ui/react";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../../../Redux/AppReducer/action";
 

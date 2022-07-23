@@ -1,16 +1,6 @@
 import React, { useState } from "react";
 
-import {
-  Box,
-  Button,
-  Center,
-  Flex,
-  Heading,
-  Image,
-  SimpleGrid,
-  Stack,
-  Text,
-} from "@chakra-ui/react";
+import { Box, Image, SimpleGrid, Stack, Text } from "@chakra-ui/react";
 import {
   Accordion,
   AccordionItem,

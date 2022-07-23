@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import {
   Box,
-  Button,
-  Center,
   Flex,
   Heading,
   HStack,
@@ -10,12 +8,12 @@ import {
   Select,
   SimpleGrid,
   Stack,
+  Center,
   Tag,
   Text,
 } from "@chakra-ui/react";
 import Navbar from "../../Components/LandingPage/components/Navbar";
 import { CommonQstns } from "../../Components/MenuPlans/CommonQstns";
-import { Faq } from "../../Components/Faq";
 import { Footer } from "../../Components/Footer";
 import { useSearchParams } from "react-router-dom";
 import { getData } from "../../Redux/AppReducer/action";

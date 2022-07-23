@@ -1,16 +1,6 @@
 import React from "react";
 
-import {
-  Box,
-  Button,
-  Center,
-  Flex,
-  Heading,
-  Image,
-  SimpleGrid,
-  Stack,
-  Text,
-} from "@chakra-ui/react";
+import { Box, Heading, SimpleGrid, Stack, Text } from "@chakra-ui/react";
 import {
   Accordion,
   AccordionItem,
@@ -18,14 +8,7 @@ import {
   AccordionPanel,
   AccordionIcon,
 } from "@chakra-ui/react";
-import {
-  Slider,
-  SliderTrack,
-  SliderFilledTrack,
-  SliderThumb,
-  SliderMark,
-} from "@chakra-ui/react";
-import { Nutrition } from "./Nutrition";
+import { Nutrition } from "../../../Cart/CartModal/Components/Nutrition";
 
 function ModalNutrition({ data }) {
   return (
