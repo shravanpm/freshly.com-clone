@@ -1,4 +1,5 @@
 import React from "react";
+
 import {
   Box,
   Accordion,
@@ -10,11 +11,12 @@ import {
   Text,
 } from "@chakra-ui/react";
 
-export const Faq = () => {
+export const CommonQstns = () => {
+  const data = [];
   return (
     <Box
       w={"80%"}
-      m={"5rem auto"}
+      m={"auto"}
       fontFamily={
         'FavoritFreshly, "Helvetica Neue", Helvetica, Arial, sans-serif;'
       }

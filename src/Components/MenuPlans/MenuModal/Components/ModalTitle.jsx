@@ -1,18 +1,16 @@
 import React from "react";
 
-import { Box, Button, Flex, Spacer, Stack, Tag, Text } from "@chakra-ui/react";
+import { Box, Flex, Spacer, Stack, Tag, Text } from "@chakra-ui/react";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../../../Redux/AppReducer/action";
 
-export const CartModalTitle = ({ data }) => {
+export const MenuModalTitle = ({ data }) => {
   const dispatch = useDispatch();
-  const handleAdd = (payload) => {
-    dispatch(addToCart(payload));
-  };
+
   return (
     <>
       <Stack>
-        <Text size="md" fontSize={"16px"} color="blackAlpha.1000" w="130%">
+        <Text size="md" fontSize={"16px"} color="blackAlpha.1200" w="130%">
           <b>{data.title}</b>
         </Text>
         <Text size={"xs"} fontSize="14px" as="i" color="blackAlpha.700">
@@ -23,25 +21,16 @@ export const CartModalTitle = ({ data }) => {
             {data.highlight.split(",").map((item, index) => (
               <Tag
                 size="xs"
-                p="0px 10px"
+                p="5px 15px"
                 mr="5px"
                 key={index}
                 fontSize="12px"
+                backgroundColor={"rgb(184,255,250)"}
               >{`${item}`}</Tag>
             ))}
           </Flex>
           <Spacer />
-          <Box>
-            <Button
-              size="sm"
-              colorScheme="blue"
-              onClick={() => {
-                handleAdd(data);
-              }}
-            >
-              + Add
-            </Button>
-          </Box>
+          <Box></Box>
         </Flex>
       </Stack>
     </>

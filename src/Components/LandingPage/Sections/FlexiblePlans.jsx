@@ -1,5 +1,5 @@
 import React from "react";
-import { Flex, Image, Button, Text, Box } from "@chakra-ui/react";
+import { Flex, Image, Button, Text, Box, Link } from "@chakra-ui/react";
 import Slider from "./Slider";
 
 const FlexiblePlans = () => {
@@ -9,17 +9,19 @@ const FlexiblePlans = () => {
 			<Text fontSize="40px" fontWeight="bold">
 				Flexible plans that fit your life
 			</Text>
-			<Text mb="60px" mt="10px">
+			<Text mb="60px" mt="10px" as="span">
 				We offer anywhere from 4–12 meals per week, with meals as low as{" "}
-				<span style={{ color: "teal", fontWeight: "bold" }}>$8.99 each.</span>{" "}
-				<span style={{ fontWeight: "bold" }}>The bigger your box,</span>
-				<Text>
-					<span style={{ fontWeight: "bold" }}>the more you’ll save—</span>
-					and you can always pause, cancel, or change your plan at any time.
-				</Text>
 			</Text>
-
-			<Flex gap="20px" justify="space-between">
+			<Text style={{ display: "inline", color: "teal", fontWeight: "bold" }}>
+				$8.99 each.
+			</Text>{" "}
+			<Text style={{ display: "inline", fontWeight: "bold" }}>
+				The bigger your box, the more you’ll save{" "}
+			</Text>
+			<Text>
+				and you can always pause, cancel, or change your plan at any time.
+			</Text>
+			<Flex gap="20px" justify="space-between" mt="40px">
 				<Box>
 					<Image
 						w="200px"
@@ -71,15 +73,14 @@ const FlexiblePlans = () => {
 					</Text>
 				</Box>
 			</Flex>
-
 			<Text my="30px" style={{ color: "teal" }} fontWeight="500">
 				Shipping and tax added at checkout
 			</Text>
-
-			<Button colorScheme="messenger" variant="solid" borderRadius="0">
-				Sign Up Now
-			</Button>
-
+			<Link href="http://localhost:3000/signup">
+				<Button colorScheme="messenger" variant="solid" borderRadius="0">
+					Sign Up Now
+				</Button>
+			</Link>
 			<Text fontSize="45px" fontWeight="700" mt="70px" mb="40px">
 				What Others Are Saying
 			</Text>

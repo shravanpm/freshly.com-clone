@@ -119,9 +119,9 @@ export const Checkout = () => {
             </div>
             <div id="checkbox">
               <Stack spacing={5} direction="row">
-                <Checkbox colorScheme="green" defaultChecked>
+                {/* <Checkbox colorScheme="green" defaultChecked>
                   Receive SMS text message updates on my orders
-                </Checkbox>
+                </Checkbox> */}
               </Stack>
             </div>
             <div className="address">
@@ -140,14 +140,80 @@ export const Checkout = () => {
             </div>
           </FormControl>
         </div>
+       
         <div className="Div2">
-          <h2>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit
-            vel minima voluptate dicta quibusdam doloremque temporibus soluta
-            quaerat possimus sint molestias earum reiciendis nihil ab at,
-            praesentium, ipsum autem rerum?
-          </h2>
+        
+          <div className="date">
+            <FormControl>
+              <FormLabel>Country</FormLabel>
+              <Select placeholder="Select country">
+                <option>United Arab Emirates</option>
+                <option>Nigeria</option>
+              </Select>
+            </FormControl>
+          </div>
+          <hr className="hr" />
+          <div className="meals">
+            <div>6 meals</div>
+            <div id="price2">$78.98</div>
+          </div>
+          <hr className="hr" />
+          <div className="shadow">
+            <div className="discount1">
+              <div>6 meals discount</div>
+              <div id="price">$10.89</div>
+            </div>
+            <div className="discount2">
+              <div id="p">subtotal</div>
+              <div id="price2">$59.80</div>
+            </div>
+          </div>
+          <hr className="hr" />
+          <div className="shiping">
+            <div>Shiping</div>
+            <div id="price2"> $14.10</div>
+          </div>
+          <hr className="hr" />
+          <div className="shiping">
+            <div>Tax</div>
+            <div id="price2"> $1.10</div>
+          </div>
+          <hr className="hr" />
+          <div className="shiping">
+            <div id="p">Total</div>
+            <div id="price2"> $1.10</div>
+          </div>
+          <div className="Mymeal">
+            < p id="para">My Meals</p>
+            <br />
+             <div className="items">
+                  <div className="item-div">
+                     <div  > <span><p id="para1">1</p> </span> </div>
+                     <div className="img-div"> <img src="https://res.cloudinary.com/freshly/image/upload/c_fill,dpr_2,f_auto,h_90,w_90/v1637012875/production-meal-without-background-image-3c327134-2073-4b4a-9e97-a81597e5d689.png" alt=""  id="img2"/></div>
+                     <div className="item-name"><h2 id="meal-name">Steak Peppercorn</h2></div>
+                  </div>
+                  <br/>
+                  <hr className="hr" color="grey"/>
+
+                  <div className="item-div">
+                     <div  > <span><p id="para1">1</p> </span> </div>
+                     <div className="img-div"> <img src="https://res.cloudinary.com/freshly/image/upload/c_fill,dpr_2,f_auto,h_90,w_90/v1637012875/production-meal-without-background-image-3c327134-2073-4b4a-9e97-a81597e5d689.png" alt=""  id="img2"/></div>
+                     <div className="item-name"><h2 id="meal-name">Steak Peppercorn</h2></div>
+                  </div>
+                  <br/>
+                  <hr className="hr" color="grey"/>
+
+                  <div className="item-div">
+                     <div  > <span><p id="para1">1</p> </span> </div>
+                     <div className="img-div"> <img src="https://res.cloudinary.com/freshly/image/upload/c_fill,dpr_2,f_auto,h_90,w_90/v1637012875/production-meal-without-background-image-3c327134-2073-4b4a-9e97-a81597e5d689.png" alt=""  id="img2"/></div>
+                     <div className="item-name"><h2 id="meal-name">Steak Peppercorn</h2></div>
+                  </div>
+                  <hr className="hr" color="grey"/>
+
+             </div>
         </div>
+        </div>
+        
       </div>
     </div>
   );
