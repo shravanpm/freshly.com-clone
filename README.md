@@ -1,70 +1,53 @@
-# Getting Started with Create React App
+# Freshly - Clone
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Team members:
+1. Rajashree Chakraborty
+2. Shravan pm
+3. Aysha Sinara
+4. Preeti Sharma
+5. Abhisekh Giri
 
-## Available Scripts
+## Project Details:
+Freshly is a New York-based prepared meal delivery company that delivers throughout the United States.  As part of our unit 5 at Masai School, we were given to clone the [freshly.com](https://www.freshly.com) website.
 
-In the project directory, you can run:
+The project has been completed within the duration of 5 days. Each of us had shared work and responsibilities and learnt a lot during the course of this project.
 
-### `npm start`
+**Original website link**: https://www.freshly.com
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+**Link of our deployed project**: https://freshly-clone-flame.vercel.app/
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Tech Stack and features
+- React
+- Redux
+- Redux Thunks
+- Json-Server
+- Chakra UI
+- Styled Components
+- Protected Routes(only accesible after login)
+- Responsiveness
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Glimpse and screenshots of our cloned website:
+**Landing Page**
+![App Screenshot](https://github.com/shravanpm/cooperative-bridge-6636/blob/main/screenshots/LandingPage.png)
 
-### `npm run build`
+**Plans and Menu Page**
+![App Screenshot](https://github.com/shravanpm/cooperative-bridge-6636/blob/main/screenshots/PlansAndMenu.png?raw=true)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**Help Page**
+![App Screenshot](https://github.com/shravanpm/cooperative-bridge-6636/blob/main/screenshots/Help.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**SignUp Page**
+![App Screenshot](https://github.com/shravanpm/cooperative-bridge-6636/blob/main/screenshots/SignUp.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**Login Page**
+![App Screenshot](https://github.com/shravanpm/cooperative-bridge-6636/blob/main/screenshots/Login.png)
 
-### `npm run eject`
+**Plans Page**
+![App Screenshot](https://github.com/shravanpm/cooperative-bridge-6636/blob/main/screenshots/Plans.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+**Cart Page**
+![App Screenshot](https://github.com/shravanpm/cooperative-bridge-6636/blob/main/screenshots/Cart.png)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Checkout Page**
+![App Screenshot](https://github.com/shravanpm/cooperative-bridge-6636/blob/main/screenshots/Checkout.png)
