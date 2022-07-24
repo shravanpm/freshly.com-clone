@@ -198,6 +198,6 @@ const RouteWrapper = styled.div`
   justify-content: space-between;
 `;
 const dateWrapper = styled.div`
-display: flex;
-flex-direction: row;
-`
+  display: flex;
+  flex-direction: row;
+`;
