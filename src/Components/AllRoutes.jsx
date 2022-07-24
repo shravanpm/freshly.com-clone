@@ -16,29 +16,50 @@ import { Payment } from "./Checkout/Payment";
 import { Thankyou } from "./Checkout/Thankyou";
 
 const AllRoutes = () => {
-  return (
-    <Routes>
-      <Route path="/" element={<HomePage />} />
-      <Route path="/help" element={<Help />} />
-      <Route path="/submitARequest" element={<SubmitARequest />} />
-      <Route
-        path="/cart"
-        element={
-          <RequiredAuth>
-            <Cart />
-          </RequiredAuth>
-        }
-      />
-      <Route path="/deliverydate" element={<DateSelector />} />
-      <Route path="/plans" element={<Plans />} />
-      <Route path="/payment" element={<Payment />} />
-      <Route path="/thankyou" element={<Thankyou />} />
-      <Route path="/plansandmenus" element={<MenuPlans />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/signup" element={<SignUp />} />
-      <Route path="/checkout" element={<Checkout />} />
-    </Routes>
-  );
+	return (
+		<Routes>
+			<Route path="/" element={<HomePage />} />
+			<Route path="/help" element={<Help />} />
+			<Route path="/submitARequest" element={<SubmitARequest />} />
+			<Route
+				path="/cart"
+				element={
+					<RequiredAuth>
+						<Cart />
+					</RequiredAuth>
+				}
+			/>
+			<Route
+				path="/deliverydate"
+				element={
+					<RequiredAuth>
+						<DateSelector />
+					</RequiredAuth>
+				}
+			/>
+			<Route path="/plans" element={<Plans />} />
+			<Route
+				path="/payment"
+				element={
+					<RequiredAuth>
+						<Payment />
+					</RequiredAuth>
+				}
+			/>
+			<Route path="/thankyou" element={<Thankyou />} />
+			<Route path="/plansandmenus" element={<MenuPlans />} />
+			<Route path="/login" element={<Login />} />
+			<Route path="/signup" element={<SignUp />} />
+			<Route
+				path="/checkout"
+				element={
+					<RequiredAuth>
+						<Checkout />
+					</RequiredAuth>
+				}
+			/>
+		</Routes>
+	);
 };
 
 export default AllRoutes;
