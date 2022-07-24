@@ -12,6 +12,8 @@ import { Checkout } from "./Checkout/Checkout";
 import Help from "./LandingPage/Pages/Help/Help";
 import SubmitARequest from "./LandingPage/Pages/SubmitARequest";
 import RequiredAuth from "./RequiredAuth";
+import { Payment } from "./Checkout/Payment";
+import { Thankyou } from "./Checkout/Thankyou";
 
 const AllRoutes = () => {
   return (
@@ -29,7 +31,8 @@ const AllRoutes = () => {
       />
       <Route path="/deliverydate" element={<DateSelector />} />
       <Route path="/plans" element={<Plans />} />
-
+      <Route path="/payment" element={<Payment />} />
+      <Route path="/thankyou" element={<Thankyou />} />
       <Route path="/plansandmenus" element={<MenuPlans />} />
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<SignUp />} />

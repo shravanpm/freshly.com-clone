@@ -13,6 +13,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { login } from "../../Redux/AuthReducer/action";
 import { LOGIN_SUCCESS } from "../../Redux/AuthReducer/actionTypes";
 import { Footer } from "../../Components/Footer";
+import { LoginNav } from "../../Components/LoginNav";
 
 export const Login = () => {
 	const [email, setEmail] = useState("");
@@ -37,6 +38,7 @@ export const Login = () => {
 	};
 	return (
 		<>
+		<LoginNav/>
 			<Flex
 				direction={"column"}
 				justify={"space-evenly"}
