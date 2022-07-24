@@ -8,17 +8,19 @@
   height: 100vh;
 }
 .Body{
-  border: 1px solid green;
-  margin-top: 70px;
+  /* border: 1px solid green; */
+  margin-top: 20px;
   height: max-content;
   /* display: flex; */
 }
 .div1{
   width: 52%;
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
   margin-left: 30px;
   margin-top: 20px;
   position: relative;
+  padding-bottom: 10px;
+  padding-left: 20px;
 }
 .del{
   display: flex;
@@ -90,7 +92,7 @@ text-align: left;
    /* display: flex; */
    margin-top: 20px;
    width: 40%;
-   height: 340px;
+   height: 380px;
    margin-right: 2%;
    margin-left: 2%;
    margin-bottom: 100px;
