@@ -107,12 +107,12 @@ export const Payment = () => {
                 <p id="change">Change</p>
               </div>
             </div>
-            <div className="name">
-              <div>
+            <div className="name" style={{margin:" auto",width: "88%"}}>
+              <div style={{width:"50%",textAlign:"left"}}>
                 <FormLabel>First Name</FormLabel>
                 <h3>{user?.fName}</h3>
               </div>
-              <div>
+              <div style={{width:"50%",textAlign:"left"}}>
                 <FormLabel>Last Name</FormLabel>
                 <h2>{user?.sName}</h2>
               </div>

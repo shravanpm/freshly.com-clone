@@ -43,13 +43,10 @@
   text-align: left;
   justify-content: space-between;
   /* border: 1px solid; */
-  padding: 10px 30px;
+  /* padding: 10px 30px; */
   /* margin-top: 30px; */
 }
-.name>div{
-  /* margin: auto; */
 
-}
 .address{
    /* width: 90%; */
 text-align: left;
