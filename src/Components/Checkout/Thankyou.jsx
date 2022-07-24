@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import { Heading } from "@chakra-ui/react";
 
 export const Thankyou = () => {
   const navigate = useNavigate();
@@ -13,7 +14,7 @@ export const Thankyou = () => {
           alt=""
         />
       </center>
-      <h2> Your order has been placed..........</h2>
+      <Heading size="md"> Your order has been placed..........</Heading>
     </>
   );
 };
