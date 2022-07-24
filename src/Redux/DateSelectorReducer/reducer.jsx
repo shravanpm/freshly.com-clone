@@ -40,7 +40,7 @@ const reducer=(state=initialState,action)=>{
                 selectedDate:""
             }
         case types.POST_DATE_SELECTOR_SUCCESS:
-            console.log(payload)
+         
             return {
                 ...state,
                 isLoading:false,

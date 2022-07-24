@@ -5,7 +5,6 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
 import { getPlans } from '../../Redux/PlansReducer/action'
 import styled from 'styled-components';
-import { Icon } from '@chakra-ui/react';
 import { StarIcon } from '@chakra-ui/icons';
 
 const PlanTable = () => {
@@ -19,7 +18,7 @@ const PlanTable = () => {
     }
         , [])
 
-    console.log(foodPlans)
+ 
 
     return (
 
@@ -43,8 +42,7 @@ const PlanTable = () => {
                         <tr >
                             {foodPlans.map(plan => {
 
-                                return <th key={plan.id} onClick={() => { console.log(plan.id) }}
-                                   style={  plan.id===3 ? { backgroundColor:"#b6f0dd", padding: "0px"} : {padding: "0px"} }>
+                                return <th key={plan.id} style={  plan.id===3 ? { backgroundColor:"#b6f0dd", padding: "0px"} : {padding: "0px"} }>
                                     <PlanTableContainer2 >
                                         <div style={{ fontSize: "1em", fontWeight: "500"}}>{`${plan.title} meals`}</div>
                                         <div style={{

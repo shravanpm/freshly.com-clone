@@ -7,6 +7,7 @@ import {
 	FormControl,
 	FormLabel,
 	Text,
+	Box,
 } from "@chakra-ui/react";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -30,15 +31,15 @@ export const Login = () => {
 			};
 			dispatch(login(params)).then((r) => {
 				if (r === LOGIN_SUCCESS) {
-					console.log("logindone", email);
+					// console.log("logindone", email);
 					navigate("/plans");
 				}
 			});
 		}
 	};
 	return (
-		<>
-		<LoginNav/>
+		<Box bg="#fef9eb">
+			<LoginNav />
 			<Flex
 				direction={"column"}
 				justify={"space-evenly"}
@@ -47,7 +48,6 @@ export const Login = () => {
 				h={"30rem"}
 				m={"5rem auto"}
 				p={2}
-				bg="whiteAlpha.900"
 			>
 				<Heading fontSize={"4rem"}>Log In</Heading>
 				<Flex
@@ -61,6 +61,7 @@ export const Login = () => {
 						<Input
 							placeholder="you@domain.com"
 							type={"email"}
+							bg="white"
 							value={email}
 							onChange={(e) => setEmail(e.target.value)}
 						/>
@@ -70,6 +71,7 @@ export const Login = () => {
 						<Input
 							placeholder="Enter your password"
 							type={"password"}
+							bg="white"
 							value={password}
 							onChange={(e) => setPassword(e.target.value)}
 						/>
@@ -84,16 +86,16 @@ export const Login = () => {
 						Submit
 					</Button>
 					<Flex justify={"space-around"}>
-						<Text color={"blue"}>
+						<Text color={"blue"} fontSize="14px">
 							<Link to="#">Forgot password ?</Link>
 						</Text>
-						<Text color={"blue"}>
+						<Text color={"blue"} fontSize="14px">
 							Don't have an account? <Link to="/signup">Get Started</Link>
 						</Text>
 					</Flex>
 				</Flex>
 			</Flex>
 			<Footer />
-		</>
+		</Box>
 	);
 };

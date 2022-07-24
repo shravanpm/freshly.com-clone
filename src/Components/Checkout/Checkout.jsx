@@ -18,10 +18,12 @@ import {
   Text,
   //  CheckboxGroup
 } from "@chakra-ui/react";
+
 import { Navigate, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import NavbarSecond from "../NavbarSecond";
 import { CommonQstns } from "../MenuPlans/CommonQstns";
+
 export const Checkout = () => {
   const [input, setInput] = useState("");
   // const [address1, setAddress1] = useState("");
@@ -117,6 +119,8 @@ export const Checkout = () => {
     handlePriceChange(cartData.length);
   }, [cartData]);
   return (
+    <div>
+      <NavbarSecond/>
     <div className="Main">
       <Box position={"sticky"} zIndex="999">
         <NavbarSecond />
@@ -287,5 +291,7 @@ export const Checkout = () => {
         <CommonQstns />
       </Box>
     </div>
+    </div>
+    
   );
 };
