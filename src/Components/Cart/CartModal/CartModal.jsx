@@ -22,9 +22,7 @@ import { addToCart } from "../../../Redux/AppReducer/action";
 
 export const CartModal = ({ data }) => {
   const dispatch = useDispatch();
-  const handleAdd = (payload) => {
-    dispatch(addToCart(payload));
-  };
+
   return (
     <>
       <Box

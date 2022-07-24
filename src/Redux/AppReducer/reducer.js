@@ -73,6 +73,7 @@ export const reducer = (state = initialState, action) => {
       };
     }
     case types.ADD_DATA_TO_CART_SUCCESS: {
+      console.log(payload);
       saveData("freshlyAppState", {
         ...state,
 

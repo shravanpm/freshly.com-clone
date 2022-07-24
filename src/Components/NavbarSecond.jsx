@@ -9,6 +9,7 @@ import { Link, useParams } from "react-router-dom";
 import { Link as RouterLink } from "react-router-dom";
 
 function NavbarSecond() {
+
 	const id = window.location.pathname
 	console.log(id)
 
@@ -154,11 +155,12 @@ function NavbarSecond() {
 					</RouteWrapper>
 				</div>
 
-				<div>
-					<RouteWrapper>
-						<div style={{ paddingTop: "15px" }}>
-							<Icon as={GrCircleQuestion} />
-						</div>
+
+        <div>
+          <RouteWrapper>
+            <div style={{ paddingTop: "15px" }}>
+              <Icon as={GrCircleQuestion} />
+            </div>
 
 						<div
 							style={{
@@ -177,22 +179,23 @@ function NavbarSecond() {
 			</NavebarWrapper>
 		</div>
 	);
+
 }
 
 export default NavbarSecond;
 const NavebarWrapper = styled.div`
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	padding: 20px;
-	height: 70px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20px;
+  height: 70px;
 
-	background-color: white;
+  background-color: white;
 `;
 const RouteWrapper = styled.div`
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 `;
 const dateWrapper = styled.div`
 display: flex;

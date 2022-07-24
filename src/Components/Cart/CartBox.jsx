@@ -30,7 +30,7 @@ function CartBox({ cartTotal }) {
           {cartData.map((meal, index) => (
             <Flex w="95%" key={index}>
               <Box w="30%" pt="10px">
-                <Image src={meal.img_2} w="100%" h="50px" alt="image" />
+                <Image src={meal.img} w="100%" h="50px" alt="image" />
               </Box>
               <Box w="55%" textAlign={"left"} paddingLeft="10px" pt="15px">
                 <Heading size={"xs"}>{meal.title}</Heading>

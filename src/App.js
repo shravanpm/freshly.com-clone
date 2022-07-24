@@ -5,19 +5,16 @@ import { LoginNav } from "./Components/LoginNav";
 
 // import NavbarSecond from "./Components/NavbarSecond";
 
-
 // import { Plans } from "./Pages/Plans/plans";
 
 function App() {
   return (
     <div className="App">
-
       <AllRoutes />
       {/* <NavbarSecond/> */}
       {/* <DateSelector /> */}
       {/* <Cart /> */}
       {/* <Plans /> */}
-     
     </div>
   );
 }
