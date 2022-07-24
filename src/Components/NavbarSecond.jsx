@@ -9,6 +9,7 @@ import { Link, useParams } from "react-router-dom";
 import { Link as RouterLink } from "react-router-dom";
 
 function NavbarSecond() {
+<<<<<<< HEAD
   const id = window.location.pathname;
   console.log(id);
 
@@ -147,6 +148,154 @@ function NavbarSecond() {
             )}
           </RouteWrapper>
         </div>
+=======
+
+	const id = window.location.pathname
+	console.log(id)
+
+
+
+
+
+	return (
+		<div>
+			<NavebarWrapper>
+				<div>
+					<RouterLink to="/">
+						<img
+							src="https://assets-global.website-files.com/5d03b4e130118314af624b20/5fc4feea074f5b86a6c62285_freshly-logo-R.svg"
+							alt="logo"
+							width={100}
+							height={100}
+						/>
+					</RouterLink>
+				</div>
+				<div>
+					<RouteWrapper style={{ paddingTop: "10px" }}>
+						{/* {id === "/checkout" ?   {}:{}} */}
+
+						{id === "/deliverydate" ? <div style={{ display: "flex" }}>
+							<Link to="/plans" style={{
+								textDecoration: "underline",
+								color: "blue",
+							}}>Plans</Link>
+
+							<div style={{ padding: "5px 8px " }}>
+								<Icon as={TbChevronRight} />
+							</div>
+
+							<div>Date</div>
+
+							<div style={{ padding: "5px 8px " }}>
+								<Icon as={TbChevronRight} />
+							</div>
+
+							<div>Meals</div>
+
+							<div style={{ padding: "5px 8px " }}>
+								<Icon as={TbChevronRight} />
+							</div>
+
+							<div>Checkout</div>
+
+						</div>
+							: id === "/plans" ?
+								<div style={{ display: "flex" }}>
+									<div>Plans</div>
+									<div style={{ padding: "5px 8px " }}>
+										<Icon as={TbChevronRight} />
+									</div>
+									<div>Date</div>
+
+									<div style={{ padding: "5px 8px " }}>
+										<Icon as={TbChevronRight} />
+									</div>
+
+									<div>Meals</div>
+
+									<div style={{ padding: "5px 8px " }}>
+										<Icon as={TbChevronRight} />
+									</div>
+
+									<div>Checkout</div>
+
+								</div>
+
+
+
+
+
+
+								: id === "/checkout" ?
+
+									<div style={{ display: "flex" }}>
+
+
+
+
+										<Link to="/plans" style={{
+											textDecoration: "underline",
+											color: "blue",
+										}}>Plans</Link>
+
+										<div style={{ padding: "5px 8px " }}>
+											<Icon as={TbChevronRight} />
+										</div>
+
+
+
+										<Link to="/deliverydate" style={{
+											textDecoration: "underline",
+											color: "blue",
+										}}>Date</Link>
+
+										<div style={{ padding: "5px 8px " }}>
+											<Icon as={TbChevronRight} />
+										</div>
+
+										<Link to="/plansandmenus" style={{
+											textDecoration: "underline",
+											color: "blue",
+										}}>Meals</Link>
+
+										<div style={{ padding: "5px 8px " }}>
+											<Icon as={TbChevronRight} />
+										</div>
+										<div>Checkout</div>
+
+									</div>
+
+									:
+									<div style={{ display: "flex" }}>
+										<div>Plans</div>
+										<div style={{ padding: "5px 8px " }}>
+											<Icon as={TbChevronRight} />
+										</div>
+										<div>Date</div>
+
+										<div style={{ padding: "5px 8px " }}>
+											<Icon as={TbChevronRight} />
+										</div>
+
+										<div>Meals</div>
+
+										<div style={{ padding: "5px 8px " }}>
+											<Icon as={TbChevronRight} />
+										</div>
+
+										<div>Checkout</div>
+
+									</div>
+									
+						}
+
+
+
+
+					</RouteWrapper>
+				</div>
+
+>>>>>>> d9b2025fb93f7c51cd8e5edc718b833d786262e4
 
         <div>
           <RouteWrapper>
@@ -154,6 +303,7 @@ function NavbarSecond() {
               <Icon as={GrCircleQuestion} />
             </div>
 
+<<<<<<< HEAD
             <div
               style={{
                 padding: "5px",
@@ -169,6 +319,26 @@ function NavbarSecond() {
       </NavebarWrapper>
     </div>
   );
+=======
+						<div
+							style={{
+								padding: "5px",
+								textDecoration: "underline",
+								color: "blue",
+							}}
+						>
+
+						</div>
+						<div style={{ padding: "5px " }}>
+							<CustomerSupport />
+						</div>
+					</RouteWrapper>
+				</div>
+			</NavebarWrapper>
+		</div>
+	);
+
+>>>>>>> d9b2025fb93f7c51cd8e5edc718b833d786262e4
 }
 
 export default NavbarSecond;
