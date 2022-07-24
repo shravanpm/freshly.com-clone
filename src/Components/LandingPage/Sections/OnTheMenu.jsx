@@ -1,5 +1,6 @@
 import React from "react";
 import { Flex, Image, Button, Text, Box } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 
 const OnTheMenu = () => {
 	return (
@@ -91,15 +92,17 @@ const OnTheMenu = () => {
 						<Text fontSize="13px">Single-Serve</Text>
 					</Box>
 				</Flex>
-				<Button
-					w="100%"
-					borderRadius="0"
-					colorScheme="messenger"
-					variant="solid"
-					mt="30px"
-				>
-					View Plans & Menu
-				</Button>
+				<Link to="/plansandmenus">
+					<Button
+						w="100%"
+						borderRadius="0"
+						colorScheme="messenger"
+						variant="solid"
+						mt="30px"
+					>
+						View Plans & Menu
+					</Button>
+				</Link>
 			</Box>
 		</Box>
 	);

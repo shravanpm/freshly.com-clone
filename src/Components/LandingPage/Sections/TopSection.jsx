@@ -7,7 +7,7 @@ import {
 	Button,
 	Text,
 	Box,
-	Link
+	Link,
 } from "@chakra-ui/react";
 import { Link as RouterLink } from "react-router-dom";
 
@@ -35,15 +35,17 @@ const TopSection = () => {
 							Balanced Meal for busy lives.
 						</Text>
 						<HStack p="20px">
-							<Button
-								borderColor="blue"
-								color="blue"
-								bg="white"
-								variant="solid"
-								borderRadius="0"
-							>
-								Explore Meals
-							</Button>
+							<RouterLink to="/plans">
+								<Button
+									borderColor="blue"
+									color="blue"
+									bg="white"
+									variant="solid"
+									borderRadius="0"
+								>
+									Explore Meals
+								</Button>
+							</RouterLink>
 							<RouterLink to="/signup">
 								<Button
 									colorScheme="messenger"

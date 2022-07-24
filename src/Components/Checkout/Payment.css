@@ -8,14 +8,14 @@
   height: 100vh;
 }
 .Body{
-  border: 1px solid green;
+  /* border: 1px solid green; */
   margin-top: 70px;
   height: max-content;
   /* display: flex; */
 }
 .div1{
   width: 52%;
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
   margin-left: 30px;
   margin-top: 20px;
   position: relative;
