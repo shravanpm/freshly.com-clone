@@ -10,6 +10,7 @@ import {
   Stack,
   Box,
   Button,
+  Heading,
   // InputLeftAddon,
   Checkbox,
   //  CheckboxGroup,
@@ -22,6 +23,8 @@ import {
 } from "@chakra-ui/react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import NavbarSecond from "../NavbarSecond";
+import { CommonQstns } from "../MenuPlans/CommonQstns";
 
 export const Payment = () => {
   const [input, setInput] = useState("");
@@ -77,13 +80,28 @@ export const Payment = () => {
   }, [cartData]);
   return (
     <div className="Main">
-      <h1>Confirm Your Order Details</h1>
-      <div className="Body">
+      <NavbarSecond />
+      <Flex
+        w="80%"
+        m="auto"
+        justifyContent={"space-between"}
+        p="0px 30px"
+        pt="30px"
+      >
+        <Box>
+          <Heading size={"md"}>Confirm Your Order Details</Heading>
+        </Box>
+        <Box>
+          <Heading size="md">Order Summary</Heading>
+        </Box>
+      </Flex>
+
+      <div className="Body" style={{ height: "100vh", overflow: "scroll" }}>
         <Flex>
           <Stack className="div1">
             <div className="del">
               <div>
-                <h3>Delivery Address</h3>
+                <Heading size="md">Delivery Address</Heading>
               </div>
               <div>
                 <p id="change">Change</p>
@@ -211,13 +229,14 @@ export const Payment = () => {
 
           {/* div two area------------------------------------------------------------------- */}
 
-          <div className="Div2">
+          <div className="Div2" style={{ paddingTop: "20px", h: "600px" }}>
             <div className="date">
               <FormControl>
-                <FormLabel>Country</FormLabel>
-                <Select placeholder="Select country">
-                  <option>United Arab Emirates</option>
-                  <option>Nigeria</option>
+                <FormLabel>Delivery Date</FormLabel>
+                <Select placeholder="Select Delivery date">
+                  <option>25 Monday 2022</option>
+                  <option>26 Tuesday 2022</option>
+                  <option>27 Wednesday 2022</option>
                 </Select>
               </FormControl>
             </div>
@@ -230,9 +249,9 @@ export const Payment = () => {
             <div className="shadow">
               <div className="discount1">
                 <div>{`${cartData.length} meals discount`}</div>
-                <div id="price">{`$${
+                <div id="price">{`$${(
                   Number(cartTotal.regTotal) - Number(cartTotal.currentTotal)
-                }`}</div>
+                ).toFixed(2)}`}</div>
               </div>
               <div className="discount2">
                 <div id="p">subtotal</div>
@@ -254,10 +273,10 @@ export const Payment = () => {
               <div id="p">Total</div>
               <div id="price2">
                 {" "}
-                {`$${Number(cartTotal.currentTotal) + 15.2}`}
+                {`$${(Number(cartTotal.currentTotal) + 15.2).toFixed(2)}`}
               </div>
             </div>
-            <div className="Mymeal">
+            <div className="Mymeal" style={{ overflow: "scroll" }}>
               <p id="para">My Meals</p>
               <br />
               <div className="items">

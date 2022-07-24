@@ -26,7 +26,7 @@ export const MenuPlans = () => {
   const dispatch = useDispatch();
   const handleCategory = (e) => {
     const { value } = e.target;
-    console.log(value);
+    // console.log(value);
     setCategory(value);
   };
   const data = useSelector((state) => state.appReducer.data);
