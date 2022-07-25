@@ -34,6 +34,7 @@ export const Payment = () => {
     regTotal: 0,
     currentTotal: 0,
   });
+  const [payment, setPayment] = useState({});
   const cartData = useSelector((state) => state.appReducer.cart);
   const navigate = useNavigate();
   const handlePriceChange = (p) => {
@@ -69,6 +70,22 @@ export const Payment = () => {
         regTotal: (11.79 * p).toFixed(2),
       });
     }
+  };
+
+  const handlePayment = (e) => {
+    const { id, value } = e.target;
+    setPayment({
+      ...payment,
+      [id]: value,
+    });
+  };
+
+  const handleNavigate = () => {
+    if (!(payment.card && payment.otp && payment.exp)) {
+      alert("Fill in Payment Details");
+      return;
+    }
+    navigate("/thankyou");
   };
 
   const isError = input === "";
@@ -107,12 +124,12 @@ export const Payment = () => {
                 <p id="change">Change</p>
               </div>
             </div>
-            <div className="name" style={{margin:" auto",width: "88%"}}>
-              <div style={{width:"50%",textAlign:"left"}}>
+            <div className="name" style={{ margin: " auto", width: "88%" }}>
+              <div style={{ width: "50%", textAlign: "left" }}>
                 <FormLabel>First Name</FormLabel>
                 <h3>{user?.fName}</h3>
               </div>
-              <div style={{width:"50%",textAlign:"left"}}>
+              <div style={{ width: "50%", textAlign: "left" }}>
                 <FormLabel>Last Name</FormLabel>
                 <h2>{user?.sName}</h2>
               </div>
@@ -205,12 +222,27 @@ export const Payment = () => {
                   </h2>
                   <AccordionPanel pb={4}>
                     <FormLabel id="label">Credit Card Number</FormLabel>
-                    <Input type="text" id="inp" placeholder="123 234 456 657" />
+                    <Input
+                      type="text"
+                      id="card"
+                      onChange={handlePayment}
+                      placeholder="123 234 456 657"
+                    />
 
                     <FormLabel id="label">Expiration</FormLabel>
-                    <Input type="text" id="inp" placeholder="MM/YY" />
+                    <Input
+                      type="text"
+                      id="exp"
+                      onChange={handlePayment}
+                      placeholder="MM/YY"
+                    />
                     <FormLabel id="label">CVV</FormLabel>
-                    <Input type="text" id="inp" placeholder="XYZ" />
+                    <Input
+                      type="text"
+                      id="otp"
+                      onChange={handlePayment}
+                      placeholder="XYZ"
+                    />
                   </AccordionPanel>
                 </AccordionItem>
               </Accordion>
@@ -220,7 +252,7 @@ export const Payment = () => {
               colorScheme="blue"
               className="btn"
               onClick={() => {
-                navigate("/thankyou");
+                handleNavigate();
               }}
             >
               Procced to Payment{" "}
