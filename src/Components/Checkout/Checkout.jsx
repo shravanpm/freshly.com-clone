@@ -2,114 +2,115 @@ import React, { useEffect, useState } from "react";
 import "./Checkout.css";
 import { addUserData } from "../../Redux/Checkout/action";
 import {
-	FormControl,
-	FormLabel,
-	FormErrorMessage,
-	FormHelperText,
-	Input,
-	Select,
-	Stack,
-	Button,
-	// InputLeftAddon,
-	Checkbox,
-	Flex,
-	Box,
-	Heading,
-	Text,
-	//  CheckboxGroup
+  FormControl,
+  FormLabel,
+  FormErrorMessage,
+  FormHelperText,
+  Input,
+  Select,
+  Stack,
+  Button,
+  // InputLeftAddon,
+  Checkbox,
+  Flex,
+  Box,
+  Heading,
+  Text,
+  //  CheckboxGroup
 } from "@chakra-ui/react";
 import NavbarSecond from "../NavbarSecond";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { CommonQstns } from "../MenuPlans/CommonQstns";
 export const Checkout = () => {
-	const [input, setInput] = useState("");
-	// const [address1, setAddress1] = useState("");
-	// const [address, setAddress] = useState("");
-	// const [phone, setPhone] = useState("");
-	// const [email, setEmail] = useState("");
-	// const [fname, setFname] = useState("");
-	// const [lname, setLname] = useState("");
-	const [cartTotal, setCartTotal] = useState({
-		regTotal: 0,
-		currentTotal: 0,
-	});
-	const [value, setValue] = useState("");
-	const handleValue = (e) => {
-		console.log(e.target.value);
-		setValue(e.target.value);
-	};
+  const [input, setInput] = useState("");
+  // const [address1, setAddress1] = useState("");
+  // const [address, setAddress] = useState("");
+  // const [phone, setPhone] = useState("");
+  // const [email, setEmail] = useState("");
+  // const [fname, setFname] = useState("");
+  // const [lname, setLname] = useState("");
+  const [cartTotal, setCartTotal] = useState({
+    regTotal: 0,
+    currentTotal: 0,
+  });
+  const [value, setValue] = useState("");
+  const handleValue = (e) => {
+    console.log(e.target.value);
+    setValue(e.target.value);
+  };
 
-	const [user, setUser] = useState({});
-	const cartData = useSelector((state) => state.appReducer.cart);
-	const [cartDetails, setCartDetails] = useState({});
-	const dispatch = useDispatch();
-	const navigate = useNavigate();
-	const handlePriceChange = (p) => {
-		//  Product total will be calculated w.r.t number of products in cart
-		if (p < 6) {
-			setCartTotal({
-				...cartTotal,
-				currentTotal: (11.79 * p).toFixed(2),
-				regTotal: (11.79 * p).toFixed(2),
-			});
-		} else if (p < 8) {
-			setCartTotal({
-				...cartTotal,
-				currentTotal: (9.99 * p).toFixed(2),
-				regTotal: (11.79 * p).toFixed(2),
-			});
-		} else if (p < 10) {
-			setCartTotal({
-				...cartTotal,
-				currentTotal: (9.49 * p).toFixed(2),
-				regTotal: (11.79 * p).toFixed(2),
-			});
-		} else if (p < 12) {
-			setCartTotal({
-				...cartTotal,
-				currentTotal: (9.29 * p).toFixed(2),
-				regTotal: (11.79 * p).toFixed(2),
-			});
-		} else if (p === 12) {
-			setCartTotal({
-				...cartTotal,
-				currentTotal: (8.99 * p).toFixed(2),
-				regTotal: (11.79 * p).toFixed(2),
-			});
-		}
-	};
+  const [payment, setPayment] = useState({});
+  const [user, setUser] = useState({});
+  const cartData = useSelector((state) => state.appReducer.cart);
+  const [cartDetails, setCartDetails] = useState({});
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const handlePriceChange = (p) => {
+    //  Product total will be calculated w.r.t number of products in cart
+    if (p < 6) {
+      setCartTotal({
+        ...cartTotal,
+        currentTotal: (11.79 * p).toFixed(2),
+        regTotal: (11.79 * p).toFixed(2),
+      });
+    } else if (p < 8) {
+      setCartTotal({
+        ...cartTotal,
+        currentTotal: (9.99 * p).toFixed(2),
+        regTotal: (11.79 * p).toFixed(2),
+      });
+    } else if (p < 10) {
+      setCartTotal({
+        ...cartTotal,
+        currentTotal: (9.49 * p).toFixed(2),
+        regTotal: (11.79 * p).toFixed(2),
+      });
+    } else if (p < 12) {
+      setCartTotal({
+        ...cartTotal,
+        currentTotal: (9.29 * p).toFixed(2),
+        regTotal: (11.79 * p).toFixed(2),
+      });
+    } else if (p === 12) {
+      setCartTotal({
+        ...cartTotal,
+        currentTotal: (8.99 * p).toFixed(2),
+        regTotal: (11.79 * p).toFixed(2),
+      });
+    }
+  };
 
-	const handleChange = (e) => {
-		const { id, value } = e.target;
-		setUser({
-			...user,
-			[id]: value,
-		});
-	};
+  const handleChange = (e) => {
+    const { id, value } = e.target;
+    setUser({
+      ...user,
+      [id]: value,
+    });
+  };
 
-	const handleGoToPayment = () => {
-		if (
-			!(
-				user.fName &&
-				user.sName &&
-				user.add1 &&
-				user.zip &&
-				user.city &&
-				user.phone &&
-				user.email
-			)
-		) {
-			alert("Data is missing");
-			return;
-		}
-		const payload = {
-			...user,
-			state: value || "NewYork",
-		};
-		dispatch(addUserData(payload));
-		navigate("/payment");
-	};
+  const handleGoToPayment = () => {
+    if (
+      !(
+        user.fName &&
+        user.sName &&
+        user.add1 &&
+        user.zip &&
+        user.city &&
+        user.phone &&
+        user.email
+      )
+    ) {
+      alert("Data is missing");
+      return;
+    }
+    const payload = {
+      ...user,
+      state: value || "NewYork",
+    };
+    dispatch(addUserData(payload));
+    navigate("/payment");
+  };
 
   const isError = input === "";
   useEffect(() => {
@@ -136,7 +137,10 @@ export const Checkout = () => {
               <div className="div1">
                 <Box>
                   <FormControl>
-                    <div className="name" style={{width:"78%",margin:"auto"}}>
+                    <div
+                      className="name"
+                      style={{ width: "78%", margin: "auto" }}
+                    >
                       <div>
                         <FormLabel>First Name</FormLabel>
                         <Input type="text" id="fName" onChange={handleChange} />
