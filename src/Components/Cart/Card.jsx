@@ -25,6 +25,7 @@ function Card({ data }) {
       token: token,
       id: payload.id,
     };
+    console.log("test");
     dispatch(addToCart(payloadData));
   };
   return (
