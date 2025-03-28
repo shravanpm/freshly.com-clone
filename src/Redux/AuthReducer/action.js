@@ -20,7 +20,8 @@ export const registerFailure = (payload) => ({
 
 export const Register = (payload) => (dispatch) => {
    dispatch(registerRequest());
-   return axios.post('https://strawberrynets-backend.herokuapp.com/register', payload)
+   // return axios.post('https://strawberrynets-backend.herokuapp.com/register', payload)
+   return axios.post('https://reqres.in/api/register', payload)
       .then((r) => {
          dispatch(registerSuccess(r.data))
          return types.REGISTER_SUCCESS
@@ -49,7 +50,8 @@ export const loginFailure = (payload) => ({
 
 export const login = (params) => (dispatch) => {
    dispatch(loginRequest());
-   return axios.post('https://strawberrynets-backend.herokuapp.com/login',params)
+   // return axios.post('https://strawberrynets-backend.herokuapp.com/login',params)
+   return axios.post('https://reqres.in/api/login',params)
       .then((r) => {
          dispatch(loginSuccess(r.data.token))
          return types.LOGIN_SUCCESS

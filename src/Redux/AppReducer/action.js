@@ -4,7 +4,8 @@ import axios from "axios";
 export const getData = (params) => (dispatch) => {
   dispatch({ type: Types.GET_DATA_REQ });
   axios({
-    url: "https://freshly-masai.herokuapp.com/foods",
+    // url: "https://freshly-masai.herokuapp.com/foods",
+    url: "https://freshly-backend-nxxf.onrender.com/foods",
     method: "GET",
     params: params,
   })

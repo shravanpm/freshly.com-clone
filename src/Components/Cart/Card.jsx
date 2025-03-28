@@ -87,12 +87,13 @@ function Card({ data }) {
           h="40px"
           borderRadius={"50%"}
           backgroundColor="blue"
-          pt={"5px"}
+          pb={"10px"}
           justifyItems={"flex-end"}
           alignContent="end"
           float={"right"}
           bottom="0"
           cursor={"pointer"}
+          mt={"-10px"}
           onClick={() => {
             handleAdd(data);
           }}
